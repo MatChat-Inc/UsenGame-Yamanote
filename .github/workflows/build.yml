@@ -25,6 +25,7 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+          submodules: recursive
 
       # Free disk space
       - if: matrix.targetPlatform == 'Android' || matrix.targetPlatform == 'WebGL'
