@@ -1,0 +1,106 @@
+using SQLite;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Newtonsoft.Json;
+using UnityEngine;
+
+namespace USEN.Games.Yamanote
+{
+	public partial class YamanoteDAO
+	{
+		public readonly SQLiteConnection db;
+
+		// Called when the node enters the scene tree for the first time.
+		public YamanoteDAO(string databaseName = null)
+		{
+			var databasePath = Path.Combine(Application.persistentDataPath, "DB", databaseName ?? "yamanote.db");
+			var databaseDirectory = Path.GetDirectoryName(databasePath);
+
+			// Create the directory if it doesn't exist.
+			if (!Directory.Exists(databaseDirectory))
+				Directory.CreateDirectory(databaseDirectory!);
+
+			db = new SQLiteConnection(databasePath);
+			db.CreateTable<YamanoteQuestion>();
+			
+			Test();
+		}
+		
+		~YamanoteDAO()
+		{
+			db.Close();
+		}
+		
+		public void InsertFromJsonList(string json)
+		{
+			var questions = JsonConvert.DeserializeObject<List<YamanoteQuestion>>(json);
+
+			// New transaction to add all questions at once.
+			db.RunInTransaction(() =>
+			{
+				foreach (var question in questions)
+					db.Insert(question);
+			});
+		}
+		public bool IsEmpty()
+		{
+			return !db.Table<YamanoteQuestion>().Any();
+		}
+
+		public void AddQuestion(YamanoteQuestion question)
+		{
+			db.Insert(question);
+		}
+
+		public List<YamanoteQuestion> GetQuestions(string fromCategory = null)
+		{
+			var questions = db.Query<YamanoteQuestion>("SELECT * FROM questions");
+			if (fromCategory == null)
+				return questions.ToList();
+
+			var knowledgeQuestions =
+				from question in questions
+				where question.Category == fromCategory
+				select question;
+
+			return knowledgeQuestions.ToList();
+		}
+
+		public List<YamanoteCategory> GetCategories()
+		{
+			var questions = db.Query<YamanoteQuestion>("SELECT * FROM questions");
+
+			var categories =
+				from question in questions
+				group question by question.Category into categoryGroup
+				select new YamanoteCategory
+				{
+					Name = categoryGroup.Key,
+					Questions = categoryGroup.ToList()
+				};
+
+			return categories.ToList();
+		}
+
+		private void Test()
+		{
+			var questions = GetQuestions("知識");
+
+			foreach (var question in questions)
+				Debug.Log($"{question.Content} - {question.Category} - {question.Theme} - {question.Difficulty}");
+
+			var categories = GetCategories();
+
+			foreach (var category in categories)
+			{
+				Debug.Log($"{category.Name} - {category.Questions.Count} questions");
+				foreach (var question in category.Questions)
+				{
+					Debug.Log($"  {question.Content} - {question.Theme} - {question.Difficulty}");
+				}
+			}
+		}
+	}
+}

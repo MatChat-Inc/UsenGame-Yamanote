@@ -1,0 +1,1773 @@
+[
+  {
+    "ID": 2,
+    "Content": "白いもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 3,
+    "Content": "黒いもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 4,
+    "Content": "赤いもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 5,
+    "Content": "青いもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 6,
+    "Content": "黄色いもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 7,
+    "Content": "オレンジのもの",
+    "Theme": "連想",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 8,
+    "Content": "緑のもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 9,
+    "Content": "紫のもの",
+    "Theme": "連想",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 10,
+    "Content": "茶色いもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 11,
+    "Content": "やわらかいもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 12,
+    "Content": "硬いもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 13,
+    "Content": "四角いもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 14,
+    "Content": "丸いもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 15,
+    "Content": "三角のもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 16,
+    "Content": "大きいもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 17,
+    "Content": "小さいもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 18,
+    "Content": "綺麗なもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 19,
+    "Content": "汚いもの",
+    "Theme": "連想",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 20,
+    "Content": "目に見えないもの",
+    "Theme": "連想",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 21,
+    "Content": "皆が喜ぶもの/こと",
+    "Theme": "連想",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 22,
+    "Content": "皆が嫌がるもの/こと",
+    "Theme": "連想",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 23,
+    "Content": "50音",
+    "Theme": "記憶力",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 24,
+    "Content": "1～20までの数字",
+    "Theme": "記憶力",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 25,
+    "Content": "アルファベット",
+    "Theme": "記憶力",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 26,
+    "Content": "好きな異性のタイプ",
+    "Theme": "恋愛",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 27,
+    "Content": "結婚相手に求める条件",
+    "Theme": "恋愛",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 28,
+    "Content": "キュンとする言葉",
+    "Theme": "恋愛",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 29,
+    "Content": "キュンとする仕草",
+    "Theme": "恋愛",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 30,
+    "Content": "デートスポット",
+    "Theme": "恋愛",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 31,
+    "Content": "空想上の生き物",
+    "Theme": "発想",
+    "Difficulty": "高",
+    "Category": "思考力"
+  },
+  {
+    "ID": 32,
+    "Content": "空想上の料理名",
+    "Theme": "発想",
+    "Difficulty": "高",
+    "Category": "思考力"
+  },
+  {
+    "ID": 33,
+    "Content": "強そうな苗字",
+    "Theme": "発想",
+    "Difficulty": "高",
+    "Category": "思考力"
+  },
+  {
+    "ID": 34,
+    "Content": "ありそうでない日本語",
+    "Theme": "発想",
+    "Difficulty": "高",
+    "Category": "思考力"
+  },
+  {
+    "ID": 35,
+    "Content": "ありそうでない国名/地名",
+    "Theme": "発想",
+    "Difficulty": "高",
+    "Category": "思考力"
+  },
+  {
+    "ID": 36,
+    "Content": "今いる空間に存在するもの",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 37,
+    "Content": "動物の鳴き声",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 38,
+    "Content": "擬音語",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 39,
+    "Content": "擬態語",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 40,
+    "Content": "自分の次の人のあだ名（新規/既存）",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 41,
+    "Content": "自分の次の人の好きな所",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 42,
+    "Content": "無人島に持っていきたいもの",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 43,
+    "Content": "なくても生活できるもの",
+    "Theme": "その他",
+    "Difficulty": "高",
+    "Category": "思考力"
+  },
+  {
+    "ID": 44,
+    "Content": "好きでも嫌いでもない食べ物",
+    "Theme": "その他",
+    "Difficulty": "高",
+    "Category": "思考力"
+  },
+  {
+    "ID": 45,
+    "Content": "五文字の単語",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 46,
+    "Content": "六文字の単語",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 47,
+    "Content": "七文字の単語",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 48,
+    "Content": "八文字の単語",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 49,
+    "Content": "会社/学校にあるもの",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 50,
+    "Content": "趣味",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 51,
+    "Content": "誉め言葉/元気が出る言葉",
+    "Theme": "その他",
+    "Difficulty": "高",
+    "Category": "思考力"
+  },
+  {
+    "ID": 52,
+    "Content": "言われたら悲しい言葉",
+    "Theme": "その他",
+    "Difficulty": "高",
+    "Category": "思考力"
+  },
+  {
+    "ID": 53,
+    "Content": "身に着けるもの",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 54,
+    "Content": "ライフイベント",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "思考力"
+  },
+  {
+    "ID": 55,
+    "Content": "生活必需品",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 56,
+    "Content": "女性の名前",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 57,
+    "Content": "男性の名前",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 58,
+    "Content": "外国人の名前",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "思考力"
+  },
+  {
+    "ID": 59,
+    "Content": "都道府県",
+    "Theme": "地理",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 60,
+    "Content": "県庁所在地",
+    "Theme": "地理",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 61,
+    "Content": "国名",
+    "Theme": "地理",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 62,
+    "Content": "首都",
+    "Theme": "地理",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 63,
+    "Content": "東京23区",
+    "Theme": "地理",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 64,
+    "Content": "世界遺産",
+    "Theme": "地理",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 65,
+    "Content": "山（国内外）",
+    "Theme": "地理",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 66,
+    "Content": "川（国内外）",
+    "Theme": "地理",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 67,
+    "Content": "海のある県",
+    "Theme": "地理",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 68,
+    "Content": "湖（国内外）",
+    "Theme": "地理",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 69,
+    "Content": "日本国内にある観光名所",
+    "Theme": "地理",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 70,
+    "Content": "海外の観光名所",
+    "Theme": "地理",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 71,
+    "Content": "山手線の駅名",
+    "Theme": "地理",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 72,
+    "Content": "新幹線の駅名",
+    "Theme": "地理",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 73,
+    "Content": "島（国内外）",
+    "Theme": "地理",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 74,
+    "Content": "寺/神社の名前",
+    "Theme": "地理",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 75,
+    "Content": "電車の路線の名前",
+    "Theme": "地理",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 76,
+    "Content": "雲の種類",
+    "Theme": "理科",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 77,
+    "Content": "動物の名前",
+    "Theme": "理科",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 78,
+    "Content": "色の名前",
+    "Theme": "理科",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 79,
+    "Content": "花・植物の名前",
+    "Theme": "理科",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 80,
+    "Content": "骨の名前",
+    "Theme": "理科",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 81,
+    "Content": "犬・猫の種類",
+    "Theme": "理科",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 82,
+    "Content": "虫の名前",
+    "Theme": "理科",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 83,
+    "Content": "筋肉の名前",
+    "Theme": "理科",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 84,
+    "Content": "星座",
+    "Theme": "理科",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 85,
+    "Content": "日本の年号",
+    "Theme": "歴史",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 86,
+    "Content": "旧国名",
+    "Theme": "歴史",
+    "Difficulty": "高",
+    "Category": "知識"
+  },
+  {
+    "ID": 87,
+    "Content": "アメリカの歴代大統領",
+    "Theme": "歴史",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 88,
+    "Content": "日本の歴代総理大臣",
+    "Theme": "歴史",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 89,
+    "Content": "文学作品",
+    "Theme": "歴史",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 90,
+    "Content": "日本で起こった合戦・事件",
+    "Theme": "歴史",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 91,
+    "Content": "歴史上の人物",
+    "Theme": "歴史",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 92,
+    "Content": "ことわざ",
+    "Theme": "国語",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 93,
+    "Content": "四字熟語",
+    "Theme": "国語",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 94,
+    "Content": "部首",
+    "Theme": "国語",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 95,
+    "Content": "外来語",
+    "Theme": "国語",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 96,
+    "Content": "職業",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 97,
+    "Content": "よく使うビジネス用語",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 98,
+    "Content": "日本の硬貨/紙幣に描かれている人物/モノ",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 99,
+    "Content": "行事",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 100,
+    "Content": "全国のレジャー施設（遊園地/動物園/水族館/美術館）",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 101,
+    "Content": "日系企業",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 102,
+    "Content": "外資系企業",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 103,
+    "Content": "祝日",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 104,
+    "Content": "資格",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "知識"
+  },
+  {
+    "ID": 105,
+    "Content": "方言",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 106,
+    "Content": "○○税",
+    "Theme": "その他",
+    "Difficulty": "高",
+    "Category": "知識"
+  },
+  {
+    "ID": 107,
+    "Content": "会社内の役職",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "知識"
+  },
+  {
+    "ID": 108,
+    "Content": "「あ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 109,
+    "Content": "「い」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 110,
+    "Content": "「う」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 111,
+    "Content": "「え」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 112,
+    "Content": "「お」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 113,
+    "Content": "「か」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 114,
+    "Content": "「き」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 115,
+    "Content": "「く」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 116,
+    "Content": "「け」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 117,
+    "Content": "「こ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 118,
+    "Content": "「さ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 119,
+    "Content": "「し」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 120,
+    "Content": "「す」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 121,
+    "Content": "「せ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "高",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 122,
+    "Content": "「そ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "高",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 123,
+    "Content": "「た」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 124,
+    "Content": "「ち」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 125,
+    "Content": "「つ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 126,
+    "Content": "「て」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 127,
+    "Content": "「と」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 128,
+    "Content": "「な」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 129,
+    "Content": "「に」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 130,
+    "Content": "「ぬ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 131,
+    "Content": "「ね」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 132,
+    "Content": "「の」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 133,
+    "Content": "「は」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 134,
+    "Content": "「ひ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 135,
+    "Content": "「ふ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 136,
+    "Content": "「へ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 137,
+    "Content": "「ほ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 138,
+    "Content": "「ま」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 139,
+    "Content": "「み」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 140,
+    "Content": "「む」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 141,
+    "Content": "「め」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 142,
+    "Content": "「も」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 143,
+    "Content": "「や」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 144,
+    "Content": "「ゆ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 145,
+    "Content": "「よ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 146,
+    "Content": "「わ」から始まる著名人の名前",
+    "Theme": "人物①",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 147,
+    "Content": "俳優の名前",
+    "Theme": "人物➁",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 148,
+    "Content": "女優の名前",
+    "Theme": "人物➁",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 149,
+    "Content": "芸人（ピン）の名前",
+    "Theme": "人物➁",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 150,
+    "Content": "芸人（コンビ）の名前",
+    "Theme": "人物➁",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 151,
+    "Content": "芸人（トリオ）の名前",
+    "Theme": "人物➁",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 152,
+    "Content": "YouTuberの名前",
+    "Theme": "人物➁",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 153,
+    "Content": "芸能人同士で交際/結婚しているカップル（片方の名前）",
+    "Theme": "人物➁",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 154,
+    "Content": "子役出身の芸能人",
+    "Theme": "人物➁",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 155,
+    "Content": "今後流行りそうな芸能人",
+    "Theme": "人物➁",
+    "Difficulty": "高",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 156,
+    "Content": "作家の名前",
+    "Theme": "人物➁",
+    "Difficulty": "高",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 157,
+    "Content": "映画のタイトル（邦画）",
+    "Theme": "作品",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 158,
+    "Content": "映画のタイトル（海外作品）",
+    "Theme": "作品",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 159,
+    "Content": "ドラマのタイトル",
+    "Theme": "作品",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 160,
+    "Content": "アニメ作品の名前",
+    "Theme": "作品",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 161,
+    "Content": "本/漫画/アニメの有名なセリフ",
+    "Theme": "作品",
+    "Difficulty": "高",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 162,
+    "Content": "実写化されている本/漫画/アニメの名前",
+    "Theme": "作品",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 163,
+    "Content": "少年漫画の名前",
+    "Theme": "作品",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 164,
+    "Content": "少女漫画の名前",
+    "Theme": "作品",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 165,
+    "Content": "テレビ番組の名前",
+    "Theme": "作品",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 166,
+    "Content": "キャラクターの名前",
+    "Theme": "作品",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 167,
+    "Content": "雑誌のタイトル",
+    "Theme": "作品",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 168,
+    "Content": "ゲームのタイトル",
+    "Theme": "作品",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 169,
+    "Content": "童謡/昔話/絵本の題名",
+    "Theme": "作品",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 170,
+    "Content": "男性アイドルグループの名前",
+    "Theme": "音楽",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 171,
+    "Content": "女性アイドルグループの名前",
+    "Theme": "音楽",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 172,
+    "Content": "ソロアーティストの名前",
+    "Theme": "音楽",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 173,
+    "Content": "1999年までにリリースされた楽曲名",
+    "Theme": "音楽",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 174,
+    "Content": "2000年以降にリリースされた楽曲名",
+    "Theme": "音楽",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 175,
+    "Content": "演歌歌手の名前",
+    "Theme": "音楽",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 176,
+    "Content": "邦ロックバンドの名前",
+    "Theme": "音楽",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 177,
+    "Content": "海外アーティストの名前",
+    "Theme": "音楽",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 178,
+    "Content": "楽器の名前",
+    "Theme": "音楽",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 179,
+    "Content": "映像作品（アニメ、映画、ドラマ）の主題歌",
+    "Theme": "音楽",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 180,
+    "Content": "芸能事務所/レーベル会社の名前",
+    "Theme": "音楽",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 181,
+    "Content": "スポーツ選手の名前",
+    "Theme": "スポーツ",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 182,
+    "Content": "日本の球団の名前",
+    "Theme": "スポーツ",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 183,
+    "Content": "スポーツの名前",
+    "Theme": "スポーツ",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 184,
+    "Content": "オリンピックの競技",
+    "Theme": "スポーツ",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 185,
+    "Content": "力士の名前",
+    "Theme": "スポーツ",
+    "Difficulty": "高",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 186,
+    "Content": "相撲部屋の名前",
+    "Theme": "スポーツ",
+    "Difficulty": "高",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 187,
+    "Content": "海外球団の名前",
+    "Theme": "スポーツ",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 188,
+    "Content": "国内サッカーチームの名前",
+    "Theme": "スポーツ",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 189,
+    "Content": "海外サッカーチームの名前",
+    "Theme": "スポーツ",
+    "Difficulty": "高",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 190,
+    "Content": "スポーツの技の名前",
+    "Theme": "スポーツ",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 191,
+    "Content": "スマホのアプリの名前",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 192,
+    "Content": "流行語大賞トップ10に入ったことがある言葉",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 193,
+    "Content": "ギャルが使いそうな言葉",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 194,
+    "Content": "略語",
+    "Theme": "その他",
+    "Difficulty": "中",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 195,
+    "Content": "イベント（祭り・フェスなど）の名前",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 196,
+    "Content": "ブランドの名前",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 197,
+    "Content": "遊びの名前",
+    "Theme": "その他",
+    "Difficulty": "低",
+    "Category": "バラエティ"
+  },
+  {
+    "ID": 198,
+    "Content": "日本料理",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 199,
+    "Content": "韓国料理",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 200,
+    "Content": "洋食",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 201,
+    "Content": "中華",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 202,
+    "Content": "タイ料理",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 203,
+    "Content": "おにぎりの具",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 204,
+    "Content": "寿司のネタ",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 205,
+    "Content": "肉の部位",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 206,
+    "Content": "お酒の種類",
+    "Theme": "飲",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 207,
+    "Content": "お酒以外の飲み物",
+    "Theme": "飲",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 208,
+    "Content": "ビールの銘柄",
+    "Theme": "飲",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 209,
+    "Content": "日本酒/焼酎の銘柄",
+    "Theme": "飲",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 210,
+    "Content": "おでんの具",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 211,
+    "Content": "鍋の具",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 212,
+    "Content": "インスタントラーメンの商品名",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 213,
+    "Content": "果物",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 214,
+    "Content": "野菜",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 215,
+    "Content": "魚・貝",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 216,
+    "Content": "旬の食べ物",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 217,
+    "Content": "辛い食べ物",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 218,
+    "Content": "苦い食べ物",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 219,
+    "Content": "臭い食べ物",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 220,
+    "Content": "甘い食べ物",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 221,
+    "Content": "酸っぱい食べ物",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 222,
+    "Content": "スイーツ",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 223,
+    "Content": "和菓子",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 224,
+    "Content": "飲食チェーン店",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 225,
+    "Content": "居酒屋チェーン店",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 226,
+    "Content": "ラーメン屋",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 227,
+    "Content": "飲料の商品名",
+    "Theme": "飲",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 228,
+    "Content": "お茶の種類",
+    "Theme": "飲",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 229,
+    "Content": "アテ",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 230,
+    "Content": "国内のご当地料理",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 231,
+    "Content": "国内のご当地土産",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 232,
+    "Content": "調味料",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 233,
+    "Content": "スナック菓子/駄菓子の名前",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 234,
+    "Content": "高級料理/食材",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 235,
+    "Content": "パンの種類",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 236,
+    "Content": "小麦でできているもの",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 237,
+    "Content": "年末年始に食べるもの",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 238,
+    "Content": "品種登録されている食べ物",
+    "Theme": "食",
+    "Difficulty": "高",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 239,
+    "Content": "料理をする時に使うもの",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 240,
+    "Content": "おふくろの味といえば",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 241,
+    "Content": "カタカナの料理名",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 242,
+    "Content": "朝ごはんといえば",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 243,
+    "Content": "アイスの商品名",
+    "Theme": "食",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 244,
+    "Content": "硬い食べ物",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 245,
+    "Content": "やわらかい食べ物",
+    "Theme": "食",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 246,
+    "Content": "タバコの銘柄",
+    "Theme": "生活",
+    "Difficulty": "高",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 247,
+    "Content": "チェーン店",
+    "Theme": "生活",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 248,
+    "Content": "髪型",
+    "Theme": "生活",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 249,
+    "Content": "コンビニで買えるもの",
+    "Theme": "生活",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 250,
+    "Content": "電化製品",
+    "Theme": "生活",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 251,
+    "Content": "化粧品の名前",
+    "Theme": "生活",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 252,
+    "Content": "MBTIの種類",
+    "Theme": "生活",
+    "Difficulty": "高",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 253,
+    "Content": "部活",
+    "Theme": "生活",
+    "Difficulty": "低",
+    "Category": "衣食住"
+  },
+  {
+    "ID": 254,
+    "Content": "高級ブランドの名前",
+    "Theme": "生活",
+    "Difficulty": "中",
+    "Category": "衣食住"
+  }
+]
