@@ -10074,8 +10074,8 @@ MonoBehaviour:
   itemCount: 0
   cellPrefab: {fileID: 3766435995385868153}
   snapToCellWhenSelected: 1
-  selectFirstCellOnEnable: 1
-  selectFirstCellOnReload: 1
+  selectFirstCellOnEnable: 0
+  selectFirstCellOnReload: 0
   keepSelectionOnReload: 1
 --- !u!114 &8368681262978003412
 MonoBehaviour:
