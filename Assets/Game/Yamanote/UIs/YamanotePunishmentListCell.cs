@@ -17,7 +17,7 @@ namespace USEN.Games.Yamanote
             set
             {
                 _rouletteData = value;
-                text.text = value.title;
+                text.text = value.Title;
             }
         }
     

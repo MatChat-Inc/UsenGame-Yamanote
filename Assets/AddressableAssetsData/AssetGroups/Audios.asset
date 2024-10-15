@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Audios
+  m_EditorClassIdentifier: 
+  m_GroupName: Audios
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 19530215686ffcb479286cc5a16c4210
+  m_SerializeEntries:
+  - m_GUID: 4832fe1ee69b84c44a81aa599ae836f4
+    m_Address: "Assets/Common/Commend/Audios/\u30BF\u30F3\u30DB\u30A4\u30B6\u30FC\u3068\u30A2\u30A4\u30FC\u30C0\u30E1\u30C9\u30EC\u30FC.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: 7c17898fa483705468cc3c8dacaad1c4
+    m_Address: "Assets/Common/Commend/Audios/\u5A01\u98A8\u5802\u3005.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: f34532dc56bb0a3478c4d3fe01c3d84a
+    m_Address: Assets/Game/Roulette/Audios/sfx_roulette_game_rotating.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: cab7f89994c86e94ab23d6cff5040ac5
+    m_Address: Assets/Game/Roulette/Audios/sfx_roulette_game_decelerating.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: dffaf73c2e467db468919b7a40911146
+    m_Address: "Assets/Common/Commend/Audios/\u898B\u3088\u3001\u52C7\u8005\u306F\u5E30\u308B.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: 64c38bc74b7b7614bb368b0b3cdc077d
+    m_Address: "Assets/Common/Commend/Audios/\u30CF\u30EC\u30EB\u30E4.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: 0a2196bba1ff6034b9927dfb6cac43a6
+    m_Address: Assets/Game/Roulette/Audios/bgm_roulette_loop.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: c3ed0844b6a898347bd91b00644aa421
+    m_Address: Assets/Game/Roulette/Audios/sfx_roulette_back.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: 9a521da133e3fbe4d94ce188d13d1194
+    m_Address: Assets/Game/Roulette/Audios/sfx_roulette_confirm.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: 3d04672c53227314ba61fcefc49fcdb5
+    m_Address: Assets/Game/Roulette/Audios/sfx_roulette_select.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 19ecc521cb0da484a839d120332326fe, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b06c4bff2f00f29478730e56d7249f1b, type: 2}
+    - {fileID: 11400000, guid: d57aa5224b94ac94a88a1812cefc80fd, type: 2}

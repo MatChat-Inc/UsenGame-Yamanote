@@ -104,7 +104,7 @@ namespace USEN.Games.Yamanote
         {
             // Create new roulette
             var roulette = new RouletteData();
-            roulette.title = "新規ルーレット";
+            roulette.Title = "新規ルーレット";
             roulette.sectors = new List<RouletteSector>();
             for (int i = 0; i < 8; i++)
             {

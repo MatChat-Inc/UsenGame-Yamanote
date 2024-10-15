@@ -1,173 +1,17 @@
 {
     "m_SelectedDeviceId": "309af56c",
-    "m_SelectedProcess": {
+    "m_SelectedPackage": {
         "deviceId": "309af56c",
         "name": "com.usen.uyamanote",
-        "processId": 14384,
+        "processId": 27292,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownProcessesForSerialization": [
+    "m_KnownPackagesForSerialization": [
         {
             "deviceId": "309af56c",
             "name": "com.usen.uyamanote",
-            "processId": 8592,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 9388,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 11168,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 12043,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 14893,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 15347,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 15873,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 16401,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 17142,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 17624,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 18250,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 19202,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 20006,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 21298,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 22127,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 22827,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 23276,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 26356,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 30618,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 2898,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 3343,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 4141,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 7510,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 9897,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 10811,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 11364,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 14384,
+            "processId": 27292,
             "exited": false
         }
     ],
@@ -203,11 +47,8 @@
             }
         ]
     },
-    "m_ExtraWindowState": {
-        "Type": 0,
-        "Height": 0.0
-    },
     "m_MemoryViewerState": {
+        "MemoryWindowHeight": 300.0,
         "MemoryWindowWidth": 170.0,
         "MemoryTypeEnabled": [
             true,
@@ -222,7 +63,7 @@
             true
         ],
         "MemoryGroup": 2,
-        "AutoCapture": true
+        "Behavior": 0
     },
     "m_FilterOptions": {
         "m_Filter": "",
@@ -240,24 +81,5 @@
         "BitRateK": 20000,
         "DisplayIdEnabled": false,
         "DisplayId": ""
-    },
-    "m_ScreenCaptureSettings": {
-        "Mode": 0,
-        "m_LastSaveLocation": [
-            "Z:\\Workspace\\USEN\\Template",
-            "Z:\\Workspace\\USEN\\Template"
-        ]
-    },
-    "m_InputSettings": {
-        "ShiftModifier": false,
-        "SendText": "",
-        "PosixKillSignal": 0,
-        "TargetProcess": {
-            "deviceId": "",
-            "name": "",
-            "processId": 0,
-            "exited": false
-        }
-    },
-    "m_AutoScroll": 0
+    }
 }

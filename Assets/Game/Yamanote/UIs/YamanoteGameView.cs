@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Games.Yamanote;
+using Luna;
 using Luna.Extensions;
 using Luna.Extensions.Unity;
 using Luna.UI;
-using Luna.UI.Audio;
 using Luna.UI.Navigation;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -133,8 +133,7 @@ namespace USEN.Games.Yamanote
             if (RoulettePreferences.DisplayMode == RouletteDisplayMode.Random)
             {
                 await Navigator.Push<USEN.Games.Roulette.RouletteGameView>(async (view) => {
-                    var dao = await RouletteDAO.Instance;
-                    view.RouletteData = dao.GetRandomRoulette();
+                    view.RouletteData = RouletteManager.Instance.GetRandomRoulette();
                 });
             }
             else await Navigator.Push<RouletteCategoryView>();

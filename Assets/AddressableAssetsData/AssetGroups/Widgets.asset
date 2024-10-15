@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Widgets
   m_EditorClassIdentifier: 
   m_GroupName: Widgets
+  m_Data:
+    m_SerializedData: []
   m_GUID: 4124bc2838565e14fb8b52519d2f97a2
   m_SerializeEntries:
   - m_GUID: 0fed4de471319e7478fc81fb1ddc3a3d
@@ -21,182 +23,156 @@ MonoBehaviour:
     m_SerializedLabels:
     - UI
     - USEN.Games.Common
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 16a70a556f786f3409ebfce6c4694e91
     m_Address: USEN.Games.Yamanote.YamanotePunishmentList
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
     - USEN.Games.Yamanote
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 18cfab7c382d549489bbe769d2bb47f0
     m_Address: USEN.Games.Yamanote.YamanoteQuestionsView
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
     - USEN.Games.Yamanote
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1e337da079c70e54a948a7271715ab8e
-    m_Address: USEN.Games.Roulette.RouletteEditView
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Roulette
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2967fa821446f1549be2f712e2567646
-    m_Address: global.WidgetChild
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - global
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 32634e36cb4371e43b2d989e9e1083ec
-    m_Address: USEN.Games.Roulette.RouletteGameView
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Roulette
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 47114499b18805d4bb6384247a2a6f8c
-    m_Address: USEN.Games.Yamanote.YamanotePunishmentGameView
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Yamanote
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 47a110af9f5ede448896933caa6a6fc1
-    m_Address: USEN.Games.Common.AppInfoView
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Common
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5d347ec6cc10e794fbfa93fb6c9f4720
-    m_Address: USEN.Games.Common.CommendView
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Common
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7b91dacf70a8a0a4297372b9acb20d75
     m_Address: USEN.Games.Roulette.RouletteSettingsView
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
     - USEN.Games.Roulette
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 80b6fbabfd348dc438dcf814d60e1294
-    m_Address: USEN.Games.Yamanote.YamanoteCategoryList
+  - m_GUID: 2967fa821446f1549be2f712e2567646
+    m_Address: global.WidgetChild
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
-    - USEN.Games.Yamanote
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 96b874bb70f59b04ba2d70862ad0bf4b
-    m_Address: USEN.Games.Roulette.RouletteContentList
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Roulette
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 986660a2fbfab4e4f8315f171677a1e2
-    m_Address: USEN.Games.Roulette.RouletteGameSelectionView
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Roulette
-    FlaggedDuringContentUpdateRestriction: 0
+    - global
   - m_GUID: 98b9f96af753ec348ad19380f4bcfa41
     m_Address: USEN.Games.Roulette.RouletteGameSelectionList
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
     - USEN.Games.Roulette
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a0dc3580871ae684d816b6e32c44df85
-    m_Address: USEN.Games.Yamanote.YamanoteQuestionEditView
+  - m_GUID: 47114499b18805d4bb6384247a2a6f8c
+    m_Address: USEN.Games.Yamanote.YamanotePunishmentGameView
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
     - USEN.Games.Yamanote
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a52b92806af03c1479ac7cec98d0704a
-    m_Address: USEN.Games.Yamanote.YamanoteGameOverView
+  - m_GUID: 47a110af9f5ede448896933caa6a6fc1
+    m_Address: USEN.Games.Common.AppInfoView
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
-    - USEN.Games.Yamanote
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: aabacd6beb79a644786614295621789a
-    m_Address: global.StatefulWidgetChild
+    - USEN.Games.Common
+  - m_GUID: 5d347ec6cc10e794fbfa93fb6c9f4720
+    m_Address: USEN.Games.Common.CommendView
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
-    - global
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ab08e89e0bc37cb4aa62934ce7221b32
-    m_Address: USEN.Games.Roulette.RouletteCategoryList
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Roulette
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c3dc8e32bc0cb3b4c83d876e18ae0fc6
-    m_Address: global.WidgetChild
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - global
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cab492afe31353d4aa721c22d4ca32ed
-    m_Address: global.StatefulWidgetChild
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - global
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d182b6367976172498f0bf2c66c1786e
-    m_Address: USEN.Games.Yamanote.YamanoteGameView
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Yamanote
-    FlaggedDuringContentUpdateRestriction: 0
+    - USEN.Games.Common
   - m_GUID: d40d509746a3deb4d9f3f86e3d97d4c6
     m_Address: USEN.Games.Roulette.RouletteCategoryView
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
     - USEN.Games.Roulette
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: dab77f11734675d4db4135347fd001c1
-    m_Address: USEN.Games.Yamanote.YamanoteSettingsView
+  - m_GUID: 80b6fbabfd348dc438dcf814d60e1294
+    m_Address: USEN.Games.Yamanote.YamanoteCategoryList
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
     - USEN.Games.Yamanote
-    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96b874bb70f59b04ba2d70862ad0bf4b
+    m_Address: USEN.Games.Roulette.RouletteContentList
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Roulette
   - m_GUID: e0fe98d95d495be4a9acc931e4bbae7a
     m_Address: USEN.Games.Roulette.RouletteStartView
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
     - USEN.Games.Roulette
-    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e337da079c70e54a948a7271715ab8e
+    m_Address: USEN.Games.Roulette.RouletteEditView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Roulette
+  - m_GUID: a0dc3580871ae684d816b6e32c44df85
+    m_Address: USEN.Games.Yamanote.YamanoteQuestionEditView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Yamanote
+  - m_GUID: a52b92806af03c1479ac7cec98d0704a
+    m_Address: USEN.Games.Yamanote.YamanoteGameOverView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Yamanote
+  - m_GUID: aabacd6beb79a644786614295621789a
+    m_Address: global.StatefulWidgetChild
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - global
+  - m_GUID: 986660a2fbfab4e4f8315f171677a1e2
+    m_Address: USEN.Games.Roulette.RouletteGameSelectionView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Roulette
+  - m_GUID: c3dc8e32bc0cb3b4c83d876e18ae0fc6
+    m_Address: global.WidgetChild
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - global
+  - m_GUID: cab492afe31353d4aa721c22d4ca32ed
+    m_Address: global.StatefulWidgetChild
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - global
+  - m_GUID: d182b6367976172498f0bf2c66c1786e
+    m_Address: USEN.Games.Yamanote.YamanoteGameView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Yamanote
+  - m_GUID: 32634e36cb4371e43b2d989e9e1083ec
+    m_Address: USEN.Games.Roulette.RouletteGameView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Roulette
+  - m_GUID: dab77f11734675d4db4135347fd001c1
+    m_Address: USEN.Games.Yamanote.YamanoteSettingsView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Yamanote
+  - m_GUID: ab08e89e0bc37cb4aa62934ce7221b32
+    m_Address: USEN.Games.Roulette.RouletteCategoryList
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Roulette
   - m_GUID: e67841950b12f1f49b6879df5fb194a5
     m_Address: USEN.Games.Yamanote.YamanoteHomeView
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
     - USEN.Games.Yamanote
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e9f753ffc4190d64fa826de54f74bd00
     m_Address: USEN.Games.Yamanote.YamanoteCategoryView
     m_ReadOnly: 0
     m_SerializedLabels:
     - UI
     - USEN.Games.Yamanote
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 19ecc521cb0da484a839d120332326fe, type: 2}
   m_SchemaSet:
