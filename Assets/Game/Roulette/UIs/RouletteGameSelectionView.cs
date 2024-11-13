@@ -35,12 +35,13 @@ namespace USEN.Games.Roulette
             {
                 _category = value;
                 rouletteGameSelectionList.Data = value.roulettes;
+                
+                CheckRoulette();
 
                 if (value.title == "オリジナル")
                 {
                     _editMode = EditMode.Editable;
                     bottomPanel.redButton.gameObject.SetActive(true);
-                    CheckRoulette();
                 }
                 else
                 {
@@ -50,8 +51,6 @@ namespace USEN.Games.Roulette
                 }
 
                 titleText.text = value.title;
-
-                CheckRoulette();
             }
         }
         
@@ -83,10 +82,10 @@ namespace USEN.Games.Roulette
             bottomPanel.onBlueButtonClicked += OnBlueButtonClicked;
             bottomPanel.onYellowButtonClicked += OnYellowButtonClicked;
 
-            if (_manager.IsDirty)
-            {
-                Category = _manager.GetCategory(Category.title);
-            }
+            // if (_manager.IsDirty)
+            // {
+            //     Category = _manager.GetCategory(Category.title);
+            // }
         }
 
         private void OnDisable()
@@ -165,7 +164,7 @@ namespace USEN.Games.Roulette
                 }
                 else _manager.AddRoulette(result);
                 
-                _manager.Sync();
+                // _manager.Sync();
             }
         }
 
@@ -181,7 +180,6 @@ namespace USEN.Games.Roulette
                 {
                     content = $"",
                     weight = 1,
-                    color = Color.HSVToRGB(1.0f / 8 * i, 0.5f, 1f),
                 });
             }
             
@@ -193,6 +191,14 @@ namespace USEN.Games.Roulette
             // Add to category and save
             if (result != null)
             {
+                // Set color for each sector
+                for (int i = 0; i < result.sectors.Count; i++)
+                {
+                    var sector = result.sectors[i];
+                    sector.id = i;
+                    sector.color = RouletteData.GetSectorColor(i, result.sectors.Count);
+                }
+                
                 if (IsOriginal)
                 {
                     Category.roulettes.Add(result);
@@ -205,7 +211,7 @@ namespace USEN.Games.Roulette
                 result.Category = "オリジナル";
                 
                 _manager.AddRoulette(result);
-                _manager?.Sync();
+                // _manager?.Sync();
             }
             
             CheckRoulette();
@@ -258,9 +264,12 @@ namespace USEN.Games.Roulette
             var hasRoulette = Category.roulettes.Count > 0;
             
             RouletteGameObject.SetActive(hasRoulette);
-            
-            bottomPanel.blueButton.gameObject.SetActive(hasRoulette);
-            bottomPanel.yellowButton.gameObject.SetActive(hasRoulette);
+
+            if (Category.title == "オリジナル")
+            {
+                bottomPanel.blueButton.gameObject.SetActive(hasRoulette);
+                bottomPanel.yellowButton.gameObject.SetActive(hasRoulette);
+            }
         }
         
         private void ReloadCategory()

@@ -10,22 +10,16 @@ using UnityEngine;
 
 namespace USEN.Games.Roulette
 {
-    [Table("roulettes")]
-    public class RouletteData
+    [Table("old_roulettes")]
+    public class OldRouletteData
     {
-        [PrimaryKey] [JsonProperty("id")]
-        public string ID { get; set; }
+        [PrimaryKey] [AutoIncrement] [JsonIgnore] 
+        public int ID { get; set; }
 
-        [JsonProperty("title")]
         public string Title { get; set; }
-        
-        [JsonProperty("timestamp")]
         public long Timestamp { get; set; } = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-        
-        [JsonIgnore]
         public string Category { get; set; }
 
-        [JsonIgnore]
         public string SectorJson
         {
             get => JsonConvert.SerializeObject(sectors);
@@ -34,28 +28,19 @@ namespace USEN.Games.Roulette
         
         public List<RouletteSector> sectors = new();
         
-        public RouletteData()
+        public OldRouletteData()
         {
-            ID = Guid.NewGuid().ToString();
+            // ID = Guid.NewGuid().ToString();
         }
         
         // Copy constructor.
-        public RouletteData(RouletteData other)
+        public OldRouletteData(OldRouletteData other)
         {
             ID = other.ID;
             Title = other.Title;
             sectors = new();
             for (int i = 0; i < other.sectors.Count; i++)
                 sectors.Add(new RouletteSector(other.sectors[i]));
-        }
-        
-        public RouletteData(OldRouletteData old)
-        {
-            ID = old.ID.ToString();
-            Title = old.Title;
-            Timestamp = old.Timestamp;
-            Category = old.Category;
-            sectors = old.sectors;
         }
 
         public void OnValidate()
