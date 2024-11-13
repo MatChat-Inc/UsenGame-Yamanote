@@ -69,7 +69,7 @@ namespace USEN.Games.Yamanote
         
         private void OnExitButtonClicked()
         {
-            SceneManager.LoadScene("GameEntries");
+            Application.Quit();
         }
         
         public void PlayRandomGame()
