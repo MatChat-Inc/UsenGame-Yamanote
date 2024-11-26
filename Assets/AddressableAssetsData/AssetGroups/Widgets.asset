@@ -131,12 +131,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - UI
     - USEN.Games.Roulette
-  - m_GUID: dab77f11734675d4db4135347fd001c1
-    m_Address: USEN.Games.Yamanote.YamanoteSettingsView
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Yamanote
   - m_GUID: ab08e89e0bc37cb4aa62934ce7221b32
     m_Address: USEN.Games.Roulette.RouletteCategoryList
     m_ReadOnly: 0
@@ -173,6 +167,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - UI
     - USEN.Games.Common
+  - m_GUID: 9aac0533281a92747998c1196e054abc
+    m_Address: USEN.Games.Yamanote.YamanoteSettingsView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Yamanote
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 19ecc521cb0da484a839d120332326fe, type: 2}
   m_SchemaSet:
