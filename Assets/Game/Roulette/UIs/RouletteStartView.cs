@@ -50,8 +50,13 @@ namespace USEN.Games.Roulette
             // Load the roulette data
             RouletteManager.Instance.Sync().ContinueWith(async task => {
                 _categories = task.Result;
-                EventSystem.current.SetSelectedGameObject(startButton.gameObject);
+                if (startButton.interactable == false)
+                    EventSystem.current.SetSelectedGameObject(startButton.gameObject);
                 startButton.interactable = true;
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+            
+            API.GetRandomSetting().ContinueWith(task => {
+                RoulettePreferences.DisplayMode = (RouletteDisplayMode) task.Result.random;
             }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
@@ -110,7 +115,10 @@ namespace USEN.Games.Roulette
         
         public void OnExitButtonClicked()
         {
-            Application.Quit();
+            // Application.Quit();
+#if UNITY_ANDROID
+            Android.Back();
+#endif
         }
     }
 }

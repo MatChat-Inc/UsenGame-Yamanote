@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 59f591622f8eb814c9e73ad4df66dd78
-  m_SerializeEntries:
-  - m_GUID: c2e764d1778d85f4ba96f034fba37039
-    m_Address: Assets/Common/Commend/Audios
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 19ecc521cb0da484a839d120332326fe, type: 2}
   m_SchemaSet:

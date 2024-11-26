@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using Luna;
 using Luna.UI;
 using Luna.UI.Navigation;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace USEN.Games.Common
     {
         public VideoPlayer videoPlayer;
         public AudioSource audioSource;
+        public BottomPanel bottomPanel;
         
         public List<VideoClip> videoClips;
         public List<AssetReferenceT<AudioClip>> audioClips;
@@ -48,7 +50,21 @@ namespace USEN.Games.Common
                 };
             }
         }
-        
+
+        private void OnEnable()
+        {
+            bottomPanel.onRedButtonClicked += OnRedButtonClicked;
+            bottomPanel.onBlueButtonClicked += OnBlueButtonClicked;
+            bottomPanel.onGreenButtonClicked += OnGreenButtonClicked;
+        }
+
+        private void OnDisable()
+        {
+            bottomPanel.onRedButtonClicked -= OnRedButtonClicked;
+            bottomPanel.onBlueButtonClicked -= OnBlueButtonClicked;
+            bottomPanel.onGreenButtonClicked -= OnGreenButtonClicked;
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape) ||
@@ -72,6 +88,21 @@ namespace USEN.Games.Common
         private void OnVideoEnd(VideoPlayer source)
         {
             // Navigator.Pop();
+        }
+        
+        private void OnRedButtonClicked()
+        {
+            SFXManager.Play(R.Audios.指笛);
+        }
+
+        private void OnBlueButtonClicked()
+        {
+            SFXManager.Play(R.Audios.拍手);
+        }
+
+        private void OnGreenButtonClicked()
+        {
+            SFXManager.Play(R.Audios.歓声, 1.5f);
         }
         
         public AsyncOperationHandle<AudioClip>? PreloadAudio()

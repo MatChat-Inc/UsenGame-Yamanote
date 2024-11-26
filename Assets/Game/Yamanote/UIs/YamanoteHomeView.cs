@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using DG.Tweening;
 using Luna.UI;
 using Luna.UI.Navigation;
@@ -12,6 +13,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using USEN.Games.Common;
+using USEN.Games.Roulette;
 
 namespace USEN.Games.Yamanote
 {
@@ -45,6 +47,11 @@ namespace USEN.Games.Yamanote
         {
             // Train tween animation
             trainImage.transform.DOLocalMoveX(-5000, 1.5f).SetEase(Ease.OutSine);
+            
+            // Network request
+            API.GetRandomSetting().ContinueWith(task => {
+                RoulettePreferences.DisplayMode = (RouletteDisplayMode) task.Result.random;
+            }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
         private void Update()

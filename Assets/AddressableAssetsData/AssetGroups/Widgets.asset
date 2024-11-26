@@ -17,12 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 4124bc2838565e14fb8b52519d2f97a2
   m_SerializeEntries:
-  - m_GUID: 0fed4de471319e7478fc81fb1ddc3a3d
-    m_Address: USEN.Games.Common.PopupOptionsView
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Common
   - m_GUID: 16a70a556f786f3409ebfce6c4694e91
     m_Address: USEN.Games.Yamanote.YamanotePunishmentList
     m_ReadOnly: 0
@@ -59,18 +53,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - UI
     - USEN.Games.Yamanote
-  - m_GUID: 47a110af9f5ede448896933caa6a6fc1
-    m_Address: USEN.Games.Common.AppInfoView
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Common
-  - m_GUID: 5d347ec6cc10e794fbfa93fb6c9f4720
-    m_Address: USEN.Games.Common.CommendView
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UI
-    - USEN.Games.Common
   - m_GUID: d40d509746a3deb4d9f3f86e3d97d4c6
     m_Address: USEN.Games.Roulette.RouletteCategoryView
     m_ReadOnly: 0
@@ -173,6 +155,24 @@ MonoBehaviour:
     m_SerializedLabels:
     - UI
     - USEN.Games.Yamanote
+  - m_GUID: 47a110af9f5ede448896933caa6a6fc1
+    m_Address: USEN.Games.Common.AppInfoView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Common
+  - m_GUID: 5d347ec6cc10e794fbfa93fb6c9f4720
+    m_Address: USEN.Games.Common.CommendView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Common
+  - m_GUID: 0fed4de471319e7478fc81fb1ddc3a3d
+    m_Address: USEN.Games.Common.PopupOptionsView
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Common
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 19ecc521cb0da484a839d120332326fe, type: 2}
   m_SchemaSet:
