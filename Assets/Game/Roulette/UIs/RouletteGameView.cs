@@ -17,6 +17,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using USEN.Games.Common;
+using USEN.Games.Yamanote;
 using Random = UnityEngine.Random;
 
 namespace USEN.Games.Roulette
@@ -244,8 +245,12 @@ namespace USEN.Games.Roulette
                 builder: (popup) =>
                 {
                     popup.onOption1 = () => Navigator.Pop();
-                    popup.onOption2 = () => Navigator.PopToRoot(); //Navigator.PopUntil<RouletteStartView>();
-                    popup.onOption3 = () => SceneManager.LoadScene("GameEntries");
+                    popup.onOption2 = () => Navigator.PopUntil<YamanoteGameView>();
+#if UNITY_ANDROID
+                    popup.onOption3 = () => Android.Back();
+#else
+                    popup.onOption3 = () => Application.Quit();
+#endif
                 });
         }
         
