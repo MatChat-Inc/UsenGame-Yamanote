@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DG.Tweening;
+using Luna;
 using Luna.UI;
 using Luna.UI.Navigation;
 using Modules.UI.Misc;
@@ -34,6 +35,12 @@ namespace USEN.Games.Yamanote
             startButton.onClick.AddListener(OnStartButtonClicked);
             settingsButton.onClick.AddListener(OnSettingsButtonClicked);
             bottomPanel.exitButton.onClick.AddListener(OnExitButtonClicked);
+            
+            // Audio volume
+            BgmManager.Volume = RoulettePreferences.BgmVolume;
+            SFXManager.Volume = RoulettePreferences.SfxVolume;
+            
+            BgmManager.Play(R.Audios.BgmYamanote);
             
             _dao = new();
             if (_dao.IsEmpty())

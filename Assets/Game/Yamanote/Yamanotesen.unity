@@ -162,6 +162,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -630
       objectReference: {fileID: 0}
+    - target: {fileID: 2007290121, guid: e67841950b12f1f49b6879df5fb194a5, type: 3}
+      propertyPath: clickAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a521da133e3fbe4d94ce188d13d1194, type: 3}
+    - target: {fileID: 2007290121, guid: e67841950b12f1f49b6879df5fb194a5, type: 3}
+      propertyPath: selectAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d04672c53227314ba61fcefc49fcdb5, type: 3}
+    - target: {fileID: 2007290121, guid: e67841950b12f1f49b6879df5fb194a5, type: 3}
+      propertyPath: submitAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a521da133e3fbe4d94ce188d13d1194, type: 3}
     - target: {fileID: 874489179226447926, guid: e67841950b12f1f49b6879df5fb194a5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -338,6 +350,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4750067799388164558, guid: e67841950b12f1f49b6879df5fb194a5, type: 3}
+      propertyPath: clickAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a521da133e3fbe4d94ce188d13d1194, type: 3}
+    - target: {fileID: 4750067799388164558, guid: e67841950b12f1f49b6879df5fb194a5, type: 3}
+      propertyPath: selectAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d04672c53227314ba61fcefc49fcdb5, type: 3}
+    - target: {fileID: 4750067799388164558, guid: e67841950b12f1f49b6879df5fb194a5, type: 3}
+      propertyPath: submitAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a521da133e3fbe4d94ce188d13d1194, type: 3}
     - target: {fileID: 4960245167080291377, guid: e67841950b12f1f49b6879df5fb194a5, type: 3}
       propertyPath: m_sharedMaterial
       value: 

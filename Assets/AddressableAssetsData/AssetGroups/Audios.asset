@@ -53,17 +53,17 @@ MonoBehaviour:
     m_SerializedLabels:
     - Audio
   - m_GUID: c3ed0844b6a898347bd91b00644aa421
-    m_Address: Assets/Game/Roulette/Audios/sfx_roulette_back.mp3
+    m_Address: Assets/Game/Common/Audios/sfx_back.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
   - m_GUID: 9a521da133e3fbe4d94ce188d13d1194
-    m_Address: Assets/Game/Roulette/Audios/sfx_roulette_confirm.mp3
+    m_Address: Assets/Game/Common/Audios/sfx_confirm.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
   - m_GUID: 3d04672c53227314ba61fcefc49fcdb5
-    m_Address: Assets/Game/Roulette/Audios/sfx_roulette_select.mp3
+    m_Address: Assets/Game/Common/Audios/sfx_select.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
@@ -79,6 +79,11 @@ MonoBehaviour:
     - Audio
   - m_GUID: 134dd70190bf6864ea1e225b25d15347
     m_Address: "Assets/Game/Common/Commend/Audios/\u6B53\u58F0.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: f6619543c409c984981fa39345c568d4
+    m_Address: Assets/Game/Yamanote/Audios/bgm_yamanote.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
