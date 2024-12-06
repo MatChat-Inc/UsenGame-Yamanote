@@ -49,6 +49,7 @@ namespace USEN.Games.Yamanote
             trainImage.transform.DOLocalMoveX(-5000, 1.5f).SetEase(Ease.OutSine);
             
             // Network request
+            RouletteManager.Instance.Sync();
             API.GetRandomSetting().ContinueWith(task => {
                 RoulettePreferences.DisplayMode = (RouletteDisplayMode) task.Result.random;
             }, TaskScheduler.FromCurrentSynchronizationContext());
