@@ -224,7 +224,7 @@ namespace USEN.Games.Yamanote
         
         private void PopupConfirmView()
         {
-            Navigator.ShowModal<PopupOptionsView2>(
+            Navigator.ShowModal<PopupOptionsView>(
                 builder: (popup) =>
                 {
                     popup.onOption1 = () => Navigator.Pop();
