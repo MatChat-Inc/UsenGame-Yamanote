@@ -7,9 +7,18 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.8C24D059" = "p: dir=\"CC0 Sounds\" "
+	"last_search.8C24D059" = ""
 	"OpenInspectorPreview.8C24D059" = "0"
-	"currentGroup.8C24D059" = "asset"
+	"currentGroup.8C24D059" = "all"
+	"last_search.71A69CD8" = ""
+	"OpenInspectorPreview.71A69CD8" = "0"
+	"currentGroup.71A69CD8" = "all"
+	"last_search.60D47293" = "aaaaa"
+	"OpenInspectorPreview.60D47293" = "0"
+	"currentGroup.60D47293" = "find"
+	"last_search.D0B831AA" = "StopPlay"
+	"OpenInspectorPreview.D0B831AA" = "0"
+	"currentGroup.D0B831AA" = "asset"
 }
 providers = {
 	asset = {
@@ -76,13 +85,14 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"StopPlay"
+	"2D Offset & Tilting"
 ]
 searchItemFavorites = [
 ]
 savedSearchesSortOrder = 0
-showSavedSearchPanel = false
-expandedQueries = [
-]
+showSavedSearchPanel = true
+expandedQueries = [961552606]
 queryBuilder = true
 ignoredProperties = "id;name;classname;imagecontentshash"
 helperWidgetCurrentArea = "all"

@@ -83,7 +83,42 @@ MonoBehaviour:
     m_SerializedLabels:
     - Audio
   - m_GUID: f6619543c409c984981fa39345c568d4
+    m_Address: Assets/Game/Yamanote/Audios/bgm_yamanote_game.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: cce40b9f3e171be41ba791a4d765eee4
     m_Address: Assets/Game/Yamanote/Audios/bgm_yamanote.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: 3c9a5f197d536d94894bc7d4a5729a6f
+    m_Address: "Assets/Game/Yamanote/Audios/\u30B1\u3099\u30FC\u30E0\u30AA\u30FC\u30CF\u3099\u30FC\uFF3F\u98A8.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: 0110c2c7fa6065c4db9d7b787a7dd7ed
+    m_Address: "Assets/Game/Yamanote/Audios/SE_\u5225\u306E\u304A\u984C\u306B\u5909\u66F4.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: da4746a8fba2ded4eb540ff6ac95de0a
+    m_Address: "Assets/Game/Yamanote/Audios/\u30B1\u3099\u30FC\u30E0\u30AA\u30FC\u30CF\u3099\u30FC.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: b7b3c988a401ba042b5e166cf27b1e54
+    m_Address: "Assets/Game/Yamanote/Audios/\u30B1\u3099\u30FC\u30E0\u30AA\u30FC\u30CF\u3099\u30FC\uFF3F\u96E8.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: 969a7cd5a8814c14b94912510832bc65
+    m_Address: "Assets/Game/Yamanote/Audios/SE_\u304A\u984C\u30B7\u30E3\u30C3\u30D5\u30EB\u4E2D.mp3"
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+  - m_GUID: 68069ff0174fa684c92a82d21394e0a5
+    m_Address: "Assets/Game/Yamanote/Audios/\u30B1\u3099\u30FC\u30E0\u30AA\u30FC\u30CF\u3099\u30FC\uFF3F\u96F7.mp3"
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio

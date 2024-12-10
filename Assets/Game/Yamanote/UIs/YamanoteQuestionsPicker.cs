@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
@@ -29,6 +30,19 @@ namespace USEN.Games.Yamanote
             var targetPosition = new Vector2(0, y);
             DOTween.To(() => _scrollRect.content.anchoredPosition, v => _scrollRect.content.anchoredPosition = v, targetPosition, duration);
             await UniTask.Delay((int) (duration * 1000));
+        }
+        
+        public async Task PickNextQuestion()
+        {
+            await ScrollTo(FirstVisibleIndex + 1, 2);
+        }
+        
+        public async Task PickNextRandomQuestion()
+        {
+            var questionsCount = Data.Count;
+            var randomIndex = UnityEngine.Random.Range(0, questionsCount);
+            randomIndex += questionsCount < 10 ? questionsCount : 0;
+            await ScrollTo(FirstVisibleIndex + randomIndex, 2);
         }
     }
 }

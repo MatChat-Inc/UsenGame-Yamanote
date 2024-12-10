@@ -1,6 +1,7 @@
 // Created by LunarEclipse on 2024-7-21 19:44.
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
@@ -13,6 +14,7 @@ using Luna.UI;
 using Luna.UI.Navigation;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using USEN.Games.Common;
@@ -31,9 +33,17 @@ namespace USEN.Games.Yamanote
         public ParticleSystem highlightParticles;
         public BottomPanel bottomPanel;
         
+        public float questionInterval = 8;
+        
         public bool pickingQuestionsAutomatically = true;
         
         public Sprite rouletteBackground;
+        
+        private PlayableDirector _accelerationDirector;
+        private bool _isAccelerating;
+        private bool _loopFlag = true;
+
+        private int _counter = 0;
         
         private List<YamanoteQuestion> _questions;
         public List<YamanoteQuestion> Questions
@@ -50,6 +60,11 @@ namespace USEN.Games.Yamanote
             }
         }
 
+        private void Awake()
+        {
+            _accelerationDirector = GetComponent<PlayableDirector>();
+        }
+
         private void Start()
         {
             cloudController.speed = new Vector2(-0.05f, 0f);
@@ -64,6 +79,10 @@ namespace USEN.Games.Yamanote
             if (Input.GetKeyDown(KeyCode.Escape) ||
                 Input.GetButtonDown("Cancel")) {
                 OnExitButtonClicked();
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                Accelerate();
             }
         }
 
@@ -88,6 +107,11 @@ namespace USEN.Games.Yamanote
             bottomPanel.onGreenButtonClicked -= OnGreenButtonClicked;
             bottomPanel.onYellowButtonClicked -= OnYellowButtonClicked;
         }
+        
+        private void OnDestroy()
+        {
+            _loopFlag = false;
+        }
 
         public async void OnStartButtonClicked()
         {
@@ -97,7 +121,7 @@ namespace USEN.Games.Yamanote
             await PlayStartupAnimation(0.5f);
             
             await UniTask.Delay(TimeSpan.FromSeconds(0.75f));
-            
+
             StartPickingQuestionsAutomatically();
             
             // await PickNextRandomQuestion();
@@ -122,7 +146,7 @@ namespace USEN.Games.Yamanote
         private async void OnBlueButtonClicked()
         {
             pickingQuestionsAutomatically = false;
-            await PickNextRandomQuestion();
+            await questionsPicker.PickNextRandomQuestion();
             PlayNewQuestionAnimation();
             await UniTask.Delay(TimeSpan.FromSeconds(2));
             pickingQuestionsAutomatically = true;
@@ -148,33 +172,50 @@ namespace USEN.Games.Yamanote
             BgmManager.Resume();
         }
         
-        public async Task PickNextQuestion()
-        {
-            await questionsPicker.ScrollTo(questionsPicker.FirstVisibleIndex + 1, 2);
-        }
-        
-        public async Task PickNextRandomQuestion()
-        {
-            var questionsCount = _questions.Count;
-            var randomIndex = UnityEngine.Random.Range(0, questionsCount);
-            randomIndex += questionsCount < 10 ? questionsCount : 0;
-            await questionsPicker.ScrollTo(questionsPicker.FirstVisibleIndex + randomIndex, 2);
-        }
+        // public async Task PickNextQuestion()
+        // {
+        //     await questionsPicker.ScrollTo(questionsPicker.FirstVisibleIndex + 1, 2);
+        // }
+        //
+        // public async Task PickNextRandomQuestion()
+        // {
+        //     var questionsCount = _questions.Count;
+        //     var randomIndex = UnityEngine.Random.Range(0, questionsCount);
+        //     randomIndex += questionsCount < 10 ? questionsCount : 0;
+        //     await questionsPicker.ScrollTo(questionsPicker.FirstVisibleIndex + randomIndex, 2);
+        // }
         
         private void StartPickingQuestionsAutomatically()
         {
-            UniTask.Void(async () =>
+            void CheckAccelerate()
             {
-                while (true)
+                if (_counter >= 5 && !_isAccelerating) 
+                    Accelerate();
+            }
+            
+            async void PickQuestion()
+            {
+                ++_counter;
+                await questionsPicker.PickNextQuestion();
+                if (!_isAccelerating)
+                    PlayNewQuestionAnimation();
+            }
+            
+            var cancellationToken = this.GetCancellationTokenOnDestroy();
+            UniTask.Void(async (token) =>
+            {
+                while (_loopFlag)
                 {
+                    CheckAccelerate();
+                    
                     if (pickingQuestionsAutomatically)
                     {
-                        await PickNextQuestion();
-                        PlayNewQuestionAnimation();
+                        await UniTask.Delay(TimeSpan.FromSeconds(questionInterval));
+                        PickQuestion();
                     }
-                    await UniTask.Delay(TimeSpan.FromSeconds(5));
+                    else await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
                 }
-            });
+            }, cancellationToken);
         }
 
         private async Task PlayStartupAnimation(float duration = 1 /* In seconds */ )
@@ -231,6 +272,23 @@ namespace USEN.Games.Yamanote
                     popup.onOption2 = () => Navigator.PopToRoot();
                     popup.onOption3 = () => SceneManager.LoadScene("GameEntries");
                 });
+        }
+        
+        private void Accelerate()
+        {
+            _isAccelerating = true;
+            questionInterval = 5;
+            pickingQuestionsAutomatically = false;
+            _accelerationDirector.Play();
+            
+            questionsView.DOFade(0, 0.3f);
+            DOTween.To(() => cloudController.speed.x, x => cloudController.speed = new Vector2(x, 0), cloudController.speed.x * 1.5f, 2f);
+            DOTween.To(() => buildingsController.speed.x, x => buildingsController.speed = new Vector2(x, 0), buildingsController.speed.x * 1.5f, 2f);
+            
+            _accelerationDirector.stopped += (director) => {
+                pickingQuestionsAutomatically = true;
+                questionsView.DOFade(1, 0.5f);
+            };
         }
     }
 }
