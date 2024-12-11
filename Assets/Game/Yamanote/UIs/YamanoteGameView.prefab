@@ -11338,6 +11338,7 @@ GameObject:
   - component: {fileID: 8120093124405365959}
   - component: {fileID: 4539586023757126878}
   - component: {fileID: 8912814399946987516}
+  - component: {fileID: 6646783387543606335}
   - component: {fileID: 8370462988123189327}
   m_Layer: 0
   m_Name: YamanoteGameView
@@ -11468,10 +11469,37 @@ PlayableDirector:
     value: {fileID: 6343430200114564165}
   - key: {fileID: 0}
     value: {fileID: 0}
+  - key: {fileID: -358559847941476656, guid: 49d091f290da9e749a3c39a182d7e9ee, type: 2}
+    value: {fileID: 6646783387543606335}
+  - key: {fileID: 480229281886942589, guid: 49d091f290da9e749a3c39a182d7e9ee, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1783268312136055331, guid: 49d091f290da9e749a3c39a182d7e9ee, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 2110fdc86fd24db40a6ed6f56f68cbf5: {fileID: 8150408810397414518}
     - ddac841681d3043458fc092125e06787: {fileID: 8120093124405365960}
+--- !u!95 &6646783387543606335
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8120093124405365960}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &8370462988123189327
 MonoBehaviour:
   m_ObjectHideFlags: 0

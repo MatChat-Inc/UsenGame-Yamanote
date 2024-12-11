@@ -314,10 +314,15 @@ namespace USEN.Games.Yamanote
             
             // Play acceleration animation
             _accelerationDirector.Play();
-            _accelerationDirector.stopped += (director) => {
+            // _accelerationDirector.stopped += (director) => {
+            //     pickingQuestionsAutomatically = true;
+            //     questionsView.DOFade(1, 0.5f);
+            // };
+            
+            UniTask.WaitForSeconds(2).ContinueWith(() => {
                 pickingQuestionsAutomatically = true;
                 questionsView.DOFade(1, 0.5f);
-            };
+            });
             
             BgmManager.Play(R.Audios.BgmYamanoteGameAccelelation);
         }
