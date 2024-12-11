@@ -36,13 +36,5 @@ namespace USEN.Games.Yamanote
         {
             await ScrollTo(FirstVisibleIndex + 1, 2);
         }
-        
-        public async Task PickNextRandomQuestion()
-        {
-            var questionsCount = Data.Count;
-            var randomIndex = UnityEngine.Random.Range(0, questionsCount);
-            randomIndex += questionsCount < 10 ? questionsCount : 0;
-            await ScrollTo(FirstVisibleIndex + randomIndex, 2);
-        }
     }
 }

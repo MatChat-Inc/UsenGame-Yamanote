@@ -146,9 +146,9 @@ namespace USEN.Games.Yamanote
         private async void OnBlueButtonClicked()
         {
             pickingQuestionsAutomatically = false;
-            await questionsPicker.PickNextRandomQuestion();
+            await PickNextRandomQuestion();
             PlayNewQuestionAnimation();
-            await UniTask.Delay(TimeSpan.FromSeconds(2));
+            await UniTask.Delay(TimeSpan.FromSeconds(questionInterval));
             pickingQuestionsAutomatically = true;
         }
         
@@ -172,18 +172,19 @@ namespace USEN.Games.Yamanote
             BgmManager.Resume();
         }
         
-        // public async Task PickNextQuestion()
-        // {
-        //     await questionsPicker.ScrollTo(questionsPicker.FirstVisibleIndex + 1, 2);
-        // }
-        //
-        // public async Task PickNextRandomQuestion()
-        // {
-        //     var questionsCount = _questions.Count;
-        //     var randomIndex = UnityEngine.Random.Range(0, questionsCount);
-        //     randomIndex += questionsCount < 10 ? questionsCount : 0;
-        //     await questionsPicker.ScrollTo(questionsPicker.FirstVisibleIndex + randomIndex, 2);
-        // }
+        public async Task PickNextQuestion()
+        {
+            await questionsPicker.ScrollTo(questionsPicker.FirstVisibleIndex + 1, 2);
+        }
+        
+        public async Task PickNextRandomQuestion()
+        {
+            ++_counter;
+            var questionsCount = _questions.Count;
+            var randomIndex = UnityEngine.Random.Range(0, questionsCount);
+            randomIndex += questionsCount < 10 ? questionsCount : 0;
+            await questionsPicker.ScrollTo(questionsPicker.FirstVisibleIndex + randomIndex, 2);
+        }
         
         private void StartPickingQuestionsAutomatically()
         {
