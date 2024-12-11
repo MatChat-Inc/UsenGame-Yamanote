@@ -11,6 +11,24 @@ namespace USEN.Games.Yamanote
             get => (YamanoteDisplayMode) PlayerPrefs.GetInt("Yamanote.DisplayMode", 0);
             set => PlayerPrefs.SetInt("Yamanote.DisplayMode", (int) value);
         }
+        
+        public static int CommendationVideoOption
+        {
+            get => PlayerPrefs.GetInt("Yamanote.CommendationVideoOption", 0);
+            set => PlayerPrefs.SetInt("Yamanote.CommendationVideoOption", value);
+        }
+        
+        public static float BgmVolume
+        {
+            get => PlayerPrefs.GetFloat("Yamanote.BgmVolume", 1);
+            set => PlayerPrefs.SetFloat("Yamanote.BgmVolume", value);
+        }
+        
+        public static float SfxVolume
+        {
+            get => PlayerPrefs.GetFloat("Yamanote.SfxVolume", 1);
+            set => PlayerPrefs.SetFloat("Yamanote.SfxVolume", value);
+        }
     }
     
     public enum YamanoteDisplayMode

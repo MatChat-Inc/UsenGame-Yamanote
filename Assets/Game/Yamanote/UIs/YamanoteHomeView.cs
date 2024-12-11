@@ -79,7 +79,7 @@ namespace USEN.Games.Yamanote
         
         public void OnSettingsButtonClicked()
         {
-            Navigator.Push<RouletteSettingsView>();
+            Navigator.Push<YamanoteSettingsView>();
         }
         
         private void OnExitButtonClicked()

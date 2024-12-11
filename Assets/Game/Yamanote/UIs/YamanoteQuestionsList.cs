@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using Luna.Extensions.Unity;
 using Luna.UI;
 using Luna.UI.Navigation;
+using Modules.UI.Misc;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -50,9 +52,8 @@ namespace USEN.Games.Yamanote
         
         protected override void OnCellSubmitted(int index, YamanoteQuestionsListCell listViewCell)
         {
-            Navigator.Push<YamanoteGameView>((view) =>
-            {
-                view.Questions = Data;
+            Navigator.Push<YamanoteGameView>((view) => {
+                view.Questions = Data.Shuffle().ToList();
             });
         }
 

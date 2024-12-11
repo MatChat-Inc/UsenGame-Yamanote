@@ -6,6 +6,7 @@ using Luna.UI;
 using Luna.UI.Navigation;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using USEN.Games.Common;
 using USEN.Games.Roulette;
@@ -15,8 +16,10 @@ namespace USEN.Games.Yamanote
 {
     public class YamanoteSettingsView: Widget
     {
-        public ToggleGroup basicDisplaySettingsToggles;
-        public Slider basicDisplayShowSettingsSlider;
+        public ToggleGroup questionDisplaySettingsToggles;
+        public Slider questionDisplaySettingsSlider;
+        public ToggleGroup rouletteDisplaySettingsToggles;
+        public Slider rouletteDisplaySettingsSlider;
         public ToggleGroup commendationVideoSettingsToggles;
         public Slider commendationVideoSettingsSlider;
         public Slider bgmVolumeSlider;
@@ -28,26 +31,36 @@ namespace USEN.Games.Yamanote
 
         private void Start()
         {
-            // Current display mode
-            var selectedIndex = (int) RoulettePreferences.DisplayMode;
-            basicDisplayShowSettingsSlider.maxValue = basicDisplaySettingsToggles.Toggles.Count - 1;
-            basicDisplayShowSettingsSlider.value = selectedIndex;
-            basicDisplayShowSettingsSlider.onValueChanged.AddListener(OnBasicDisplayShowSettingsSliderValueChanged);
+            // Current display setting
+            var yamanoteDisplayIndex = (int) YamanotePreferences.DisplayMode;
+            questionDisplaySettingsSlider.maxValue = questionDisplaySettingsToggles.Toggles.Count - 1;
+            questionDisplaySettingsSlider.value = yamanoteDisplayIndex;
+            questionDisplaySettingsSlider.onValueChanged.AddListener(OnYamanoteDisplaySettingsSliderValueChanged);
             
-            basicDisplaySettingsToggles.ToggleOn(selectedIndex);
-            basicDisplaySettingsToggles.Bind(basicDisplayShowSettingsSlider);
+            questionDisplaySettingsToggles.ToggleOn(yamanoteDisplayIndex);
+            questionDisplaySettingsToggles.Bind(questionDisplaySettingsSlider);
             
-            // Commendation video settings
+            // Roulette display setting
+            
+            var rouletteDisplayIndex = (int) RoulettePreferences.DisplayMode;
+            rouletteDisplaySettingsSlider.maxValue = rouletteDisplaySettingsToggles.Toggles.Count - 1;
+            rouletteDisplaySettingsSlider.value = rouletteDisplayIndex;
+            rouletteDisplaySettingsSlider.onValueChanged.AddListener(OnRouletteDisplaySettingsSliderValueChanged);
+            
+            rouletteDisplaySettingsToggles.ToggleOn(rouletteDisplayIndex);
+            rouletteDisplaySettingsToggles.Bind(rouletteDisplaySettingsSlider);
+            
+            // Commendation video setting
             commendationVideoSettingsSlider.onValueChanged.AddListener(OnCommendationVideoSettingsSliderValueChanged);
-            commendationVideoSettingsSlider.value = RoulettePreferences.CommendationVideoOption;
-            commendationVideoSettingsToggles.ToggleOn(RoulettePreferences.CommendationVideoOption);
+            commendationVideoSettingsSlider.value = YamanotePreferences.CommendationVideoOption;
+            commendationVideoSettingsToggles.ToggleOn(YamanotePreferences.CommendationVideoOption);
             
             // Audio volume
-            bgmVolumeText.text = $"{RoulettePreferences.BgmVolume * 100:0}";
+            bgmVolumeText.text = $"{YamanotePreferences.BgmVolume * 100:0}";
             bgmVolumeSlider.value = BgmManager.Volume * 10;
             bgmVolumeSlider.onValueChanged.AddListener(OnBgmVolumeChanged);
             
-            sfxVolumeText.text = $"{RoulettePreferences.SfxVolume * 100:0}";
+            sfxVolumeText.text = $"{YamanotePreferences.SfxVolume * 100:0}";
             sfxVolumeSlider.value = SFXManager.Volume * 10;
             sfxVolumeSlider.onValueChanged.AddListener(OnSfxVolumeChanged);
             
@@ -57,7 +70,7 @@ namespace USEN.Games.Yamanote
             // Bottom panel
             bottomPanel.exitButton.onClick.AddListener(() => Navigator.Pop());
             
-            EventSystem.current.SetSelectedGameObject(basicDisplayShowSettingsSlider.gameObject);
+            EventSystem.current.SetSelectedGameObject(questionDisplaySettingsSlider.gameObject);
         }
         
         private void Update()
@@ -67,7 +80,14 @@ namespace USEN.Games.Yamanote
                 Navigator.Pop();
         }
         
-        private void OnBasicDisplayShowSettingsSliderValueChanged(float arg0)
+        private void OnYamanoteDisplaySettingsSliderValueChanged(float arg0)
+        {
+            var index = Convert.ToInt32(arg0);
+            // questionDisplaySettingsToggles.ToggleOn(Convert.ToInt32(index));
+            YamanotePreferences.DisplayMode = (YamanoteDisplayMode) index;
+        }
+        
+        private void OnRouletteDisplaySettingsSliderValueChanged(float arg0)
         {
             var index = Convert.ToInt32(arg0);
             // basicDisplaySettingsToggles.ToggleOn(Convert.ToInt32(index));
@@ -77,20 +97,20 @@ namespace USEN.Games.Yamanote
         
         private void OnCommendationVideoSettingsSliderValueChanged(float arg0)
         {
-            RoulettePreferences.CommendationVideoOption = Convert.ToInt32(arg0);
+            YamanotePreferences.CommendationVideoOption = Convert.ToInt32(arg0);
         }
         
         private void OnBgmVolumeChanged(float value)
         {
             BgmManager.SetVolume(value * 0.1f);
-            RoulettePreferences.BgmVolume = value * 0.1f;
+            YamanotePreferences.BgmVolume = value * 0.1f;
             bgmVolumeText.text = $"{value * 10:0}";
         }
         
         private void OnSfxVolumeChanged(float value)
         {
             SFXManager.SetVolume(value * 0.1f);
-            RoulettePreferences.SfxVolume = value * 0.1f;
+            YamanotePreferences.SfxVolume = value * 0.1f;
             sfxVolumeText.text = $"{value * 10:0}";
             SFXManager.Play(R.Audios.SfxBack);
         }
