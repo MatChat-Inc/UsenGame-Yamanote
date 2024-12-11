@@ -1,6 +1,7 @@
 // Created by LunarEclipse on 2024-6-21 1:53.
 
 using DG.Tweening;
+using Luna;
 using Luna.UI;
 using Luna.UI.Navigation;
 using UnityEngine;
@@ -18,6 +19,8 @@ namespace USEN.Games.Yamanote
         
         private void Start()
         {
+            SFXManager.Play(R.Audios.SfxYamanoteGameOver);
+            
             startButton.onClick.AddListener(OnStartButtonClicked);
             settingsButton.onClick.AddListener(OnSettingsButtonClicked);
         }
