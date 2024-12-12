@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "309af56c",
         "name": "com.usen.uyamanote",
-        "processId": 27292,
+        "processId": 25707,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,48 @@
             "deviceId": "309af56c",
             "name": "com.usen.uyamanote",
             "processId": 27292,
+            "exited": true
+        },
+        {
+            "deviceId": "309af56c",
+            "name": "com.usen.ujanken",
+            "processId": 15026,
+            "exited": false
+        },
+        {
+            "deviceId": "309af56c",
+            "name": "com.usen.uyamanote",
+            "processId": 26900,
+            "exited": false
+        },
+        {
+            "deviceId": "309af56c",
+            "name": "com.usen.uyamanote",
+            "processId": 22933,
+            "exited": false
+        },
+        {
+            "deviceId": "309af56c",
+            "name": "com.usen.uyamanote",
+            "processId": 23762,
+            "exited": false
+        },
+        {
+            "deviceId": "309af56c",
+            "name": "com.usen.uyamanote",
+            "processId": 24215,
+            "exited": false
+        },
+        {
+            "deviceId": "309af56c",
+            "name": "com.usen.uyamanote",
+            "processId": 25049,
+            "exited": false
+        },
+        {
+            "deviceId": "309af56c",
+            "name": "com.usen.uyamanote",
+            "processId": 25707,
             "exited": false
         }
     ],
