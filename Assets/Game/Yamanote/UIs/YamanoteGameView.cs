@@ -90,6 +90,9 @@ namespace USEN.Games.Yamanote
 
         private void OnEnable()
         {
+            BgmManager.Resume();
+            pickingQuestionsAutomatically = true;
+            
             bottomPanel.onExitButtonClicked += OnExitButtonClicked;
             bottomPanel.onSelectButtonClicked += OnStartButtonClicked;
             bottomPanel.onConfirmButtonClicked += OnConfirmButtonClicked;
@@ -101,6 +104,9 @@ namespace USEN.Games.Yamanote
 
         private void OnDisable()
         {
+            BgmManager.Pause();
+            pickingQuestionsAutomatically = false;
+            
             bottomPanel.onExitButtonClicked -= OnExitButtonClicked;
             bottomPanel.onSelectButtonClicked -= OnStartButtonClicked;
             bottomPanel.onConfirmButtonClicked -= OnConfirmButtonClicked;
