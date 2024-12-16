@@ -243,6 +243,31 @@ namespace USEN.Games.Yamanote
             }, cancellationToken);
         }
         
+        // private void StartPickingQuestionsAutomatically()
+        // {
+        //     StartCoroutine(PickQuestionsAutomatically());
+        // }
+        //
+        // private void StopPickingQuestionsAutomatically()
+        // {
+        //     StopCoroutine(PickQuestionsAutomatically());
+        // }
+        //
+        // private IEnumerator PickQuestionsAutomatically()
+        // {
+        //     while (true)
+        //     {
+        //         yield return new WaitForSeconds(questionInterval);
+        //
+        //         if (pickingQuestionsAutomatically)
+        //         {
+        //             questionsPicker.PickNextQuestion();
+        //             if (!_isAccelerating)
+        //                 PlayNewQuestionAnimation();
+        //         }
+        //     }
+        // }
+        
         private bool CheckAcceleration()
         {
             if (_counter >= 5 && !_isAccelerating)
@@ -302,7 +327,11 @@ namespace USEN.Games.Yamanote
                 {
                     popup.onOption1 = () => Navigator.Pop();
                     popup.onOption2 = () => Navigator.PopToRoot();
-                    popup.onOption3 = () => SceneManager.LoadScene("GameEntries");
+#if UNITY_ANDROID
+                    popup.onOption3 = () => Android.Back();
+#else
+                    popup.onOption3 = () => Application.Quit();
+#endif
                 });
         }
         
