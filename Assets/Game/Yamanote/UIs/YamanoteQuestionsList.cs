@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
 using System.Linq;
-using Cysharp.Threading.Tasks;
 using Luna;
-using Luna.Extensions.Unity;
 using Luna.UI;
 using Luna.UI.Navigation;
 using Modules.UI.Misc;
@@ -55,7 +51,14 @@ namespace USEN.Games.Yamanote
         protected override void OnCellSubmitted(int index, YamanoteQuestionsListCell listViewCell)
         {
             Navigator.Push<YamanoteGameView>((view) => {
-                view.Questions = Data.Shuffle().ToList();
+                var questions = Data.Shuffle().ToList();
+                
+                // Move the selected question to the first position
+                var selectedQuestion = Data[index];
+                questions.Remove(selectedQuestion);
+                questions.Insert(0, selectedQuestion);
+                
+                view.Questions = questions;
             });
             
             SFXManager.Play(R.Audios.SfxConfirm);
