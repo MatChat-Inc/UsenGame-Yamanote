@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using Luna;
 using Luna.Extensions.Unity;
 using Luna.UI;
 using Luna.UI.Navigation;
@@ -44,10 +45,11 @@ namespace USEN.Games.Yamanote
 
         protected override void OnCellClicked(int index, YamanoteQuestionsListCell listViewCell)
         {
-            Navigator.Push<YamanoteGameView>((view) =>
-            {
+            Navigator.Push<YamanoteGameView>((view) => {
                 view.Questions = Data;
             });
+            
+            SFXManager.Play(R.Audios.SfxConfirm);
         }
         
         protected override void OnCellSubmitted(int index, YamanoteQuestionsListCell listViewCell)
@@ -55,6 +57,8 @@ namespace USEN.Games.Yamanote
             Navigator.Push<YamanoteGameView>((view) => {
                 view.Questions = Data.Shuffle().ToList();
             });
+            
+            SFXManager.Play(R.Audios.SfxConfirm);
         }
 
         protected override void OnCellDeselected(int index, YamanoteQuestionsListCell listViewCell)
@@ -65,6 +69,9 @@ namespace USEN.Games.Yamanote
         protected override void OnCellSelected(int index, YamanoteQuestionsListCell listViewCell)
         {
             listViewCell.text.color = Color.HSVToRGB(148f / 360, 0.9f, 0.6f);
+            
+            if (Initialized)
+                SFXManager.Play(R.Audios.SfxSelect);
         }
     }
 

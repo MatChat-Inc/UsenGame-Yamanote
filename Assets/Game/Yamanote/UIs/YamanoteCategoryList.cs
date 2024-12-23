@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Luna;
 using Luna.UI;
 using Luna.UI.Navigation;
 using UnityEngine;
@@ -16,7 +17,8 @@ namespace USEN.Games.Yamanote
         private float RingRadius => ring.rect.width / 2;
         
         private RectTransform RectTransform => (RectTransform)transform;
-        
+
+        private bool _initialized;
         
         protected void Start()
         {
@@ -32,8 +34,11 @@ namespace USEN.Games.Yamanote
                 {
                     cell.OnCellClicked += OnCellClickOrSubmit;
                     cell.OnCellSubmitted += OnCellClickOrSubmit;
+                    cell.OnCellSelected += OnCellSelected;
                 }
             }
+            
+            _initialized = true;
         }
 
 
@@ -47,6 +52,8 @@ namespace USEN.Games.Yamanote
                 if (category != null)   
                     view.Category = category;
             });
+            
+            SFXManager.Play(R.Audios.SfxConfirm);
         }
         
         private void Update()
@@ -69,14 +76,10 @@ namespace USEN.Games.Yamanote
             }
         }
 
-        protected override void OnCellDeselected(int index, YamanoteCategoryListCell listViewCell)
+        private void OnCellSelected(int index, FixedListViewCell<YamanoteCategory> listViewCell)
         {
-            listViewCell.text.color = Color.white;
-        }
-
-        protected override void OnCellSelected(int index, YamanoteCategoryListCell listViewCell)
-        {
-            listViewCell.text.color = Color.black;
+            if (_initialized)
+                SFXManager.Play(R.Audios.SfxSelect);
         }
     }
 

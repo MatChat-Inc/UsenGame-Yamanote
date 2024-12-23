@@ -130,6 +130,8 @@ namespace USEN.Games.Yamanote
             startButton.gameObject.SetActive(false);
             questionsView.gameObject.SetActive(true);
             
+            SFXManager.Play(R.Audios.SfxConfirm);
+            
             await PlayStartupAnimation(0.5f);
             
             await UniTask.Delay(TimeSpan.FromSeconds(0.75f));
@@ -320,9 +322,11 @@ namespace USEN.Games.Yamanote
             bottomPanel.yellowButton.gameObject.SetActive(true);
         }
         
-        private void PopupConfirmView()
+        private async void PopupConfirmView()
         {
-            Navigator.ShowModal<PopupOptionsView>(
+            var orginalVolume = BgmManager.Volume;
+            
+            await Navigator.ShowModal<PopupOptionsView>(
                 builder: (popup) =>
                 {
                     popup.onOption1 = () => Navigator.Pop();
@@ -332,7 +336,11 @@ namespace USEN.Games.Yamanote
 #else
                     popup.onOption3 = () => Application.Quit();
 #endif
+                    BgmManager.Resume();
+                    BgmManager.SetVolume(BgmManager.Volume * 0.6f, 0.3f);
                 });
+            
+            BgmManager.SetVolume(orginalVolume, 0.3f);
         }
         
         private void Accelerate()
