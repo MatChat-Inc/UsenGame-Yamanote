@@ -24,8 +24,10 @@ namespace USEN.Games.Yamanote
 
 			db = new SQLiteConnection(databasePath);
 			db.CreateTable<YamanoteQuestion>();
-			
-			Test();
+
+// #if DEBUG
+// 			Test();
+// #endif
 		}
 		
 		~YamanoteDAO()

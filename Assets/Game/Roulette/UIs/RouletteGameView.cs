@@ -188,6 +188,7 @@ namespace USEN.Games.Roulette
             confirmText.text = "もう一度ルーレットを回す";
             
             // Show bottom buttons
+            bottomPanel.confirmButton.gameObject.SetActive(true);
             bottomPanel.yellowButton.gameObject.SetActive(true);
             bottomPanel.blueButton.gameObject.SetActive(true);
             bottomPanel.redButton.gameObject.SetActive(true);
@@ -217,6 +218,8 @@ namespace USEN.Games.Roulette
             
             // Play sfx
             SFXManager.PlayRepeatedly(R.Audios.SfxRouletteGameRotating);
+            
+            bottomPanel.confirmButton.gameObject.SetActive(false);
         }
         
         private async Task StopWheel()

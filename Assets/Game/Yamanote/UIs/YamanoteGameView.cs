@@ -1,7 +1,6 @@
 // Created by LunarEclipse on 2024-7-21 19:44.
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
@@ -15,7 +14,6 @@ using Luna.UI.Navigation;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Playables;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using USEN.Games.Common;
 using USEN.Games.Roulette;
@@ -29,21 +27,30 @@ namespace USEN.Games.Yamanote
         public Button startButton;
         public CanvasGroup questionsView;
         public YamanoteQuestionsPicker questionsPicker;
+        public Image questionBackground;
         public Image highlightMask;
+        public CanvasGroup accelerationGroup;
         public ParticleSystem highlightParticles;
         public BottomPanel bottomPanel;
         
+        [HideInInspector]
         public float questionInterval = 8;
-        
-        public bool pickingQuestionsAutomatically = true;
+        public float accelerationInterval = 20;
         
         public Sprite rouletteBackground;
         
-        private PlayableDirector _accelerationDirector;
+        public bool pickingQuestionsAutomatically = false;
+        
+        private bool _shouldPickingQuestionsAutomatically = false;
+        private bool _isPicking;
         private bool _isAccelerating;
         private bool _loopFlag = true;
 
-        private int _counter = 0;
+        private float _startTime = float.MaxValue;
+        
+        // private int _counter = 0;
+        
+        private PlayableDirector _accelerationDirector;
         
         private List<YamanoteQuestion> _questions;
         public List<YamanoteQuestion> Questions
@@ -60,9 +67,12 @@ namespace USEN.Games.Yamanote
             }
         }
 
+        private float ElapsedTime => Time.time - _startTime;
+
         private void Awake()
         {
             _accelerationDirector = GetComponent<PlayableDirector>();
+            _shouldPickingQuestionsAutomatically = pickingQuestionsAutomatically;
         }
 
         private void Start()
@@ -78,6 +88,8 @@ namespace USEN.Games.Yamanote
         
         private void Update()
         {
+            Debug.Log("Elapsed Time: " + ElapsedTime);
+            
             if (Input.GetKeyDown(KeyCode.Escape) ||
                 Input.GetButtonDown("Cancel")) {
                 OnExitButtonClicked();
@@ -86,12 +98,19 @@ namespace USEN.Games.Yamanote
             if (Input.GetKeyDown(KeyCode.Space)) {
                 Accelerate();
             }
+            
+            if (CheckAcceleration())
+            {
+                Accelerate();
+            }
         }
 
         private void OnEnable()
         {
             BgmManager.Resume();
-            pickingQuestionsAutomatically = true;
+            
+            if (_shouldPickingQuestionsAutomatically)
+                pickingQuestionsAutomatically = true;
             
             bottomPanel.onExitButtonClicked += OnExitButtonClicked;
             bottomPanel.onSelectButtonClicked += OnStartButtonClicked;
@@ -104,6 +123,7 @@ namespace USEN.Games.Yamanote
 
         private void OnDisable()
         {
+            SFXManager.StopAll();
             BgmManager.Pause();
             pickingQuestionsAutomatically = false;
             
@@ -118,8 +138,6 @@ namespace USEN.Games.Yamanote
         
         private void OnDestroy()
         {
-            Debug.Log("YamanoteGameView is destroyed.");
-            
             _loopFlag = false;
             
             BgmManager.Play(R.Audios.BgmYamanote);
@@ -127,6 +145,8 @@ namespace USEN.Games.Yamanote
 
         public async void OnStartButtonClicked()
         {
+            _startTime = Time.time;
+            
             startButton.gameObject.SetActive(false);
             questionsView.gameObject.SetActive(true);
             
@@ -136,7 +156,7 @@ namespace USEN.Games.Yamanote
             
             await UniTask.Delay(TimeSpan.FromSeconds(0.75f));
 
-            StartPickingQuestionsAutomatically();
+            // StartPickingQuestionsAutomatically();
             
             // await PickNextRandomQuestion();
             ShowControlButtons();
@@ -160,26 +180,36 @@ namespace USEN.Games.Yamanote
 
         private async void OnBlueButtonClicked()
         {
-            if (!pickingQuestionsAutomatically) return;
+            if (_isPicking) return;
             
-            ++_counter;
-            if (CheckAcceleration())
+            _startTime = Time.time;
+            
+            // ++_counter;
+            // if (CheckAcceleration())
+            // {
+            //     Accelerate();
+            //     await UniTask.Delay(TimeSpan.FromSeconds(3));
+            // }
+
+            if (_isAccelerating)
             {
-                Accelerate();
-                await UniTask.Delay(TimeSpan.FromSeconds(3));
+                Decelerate();
+                await UniTask.Delay(TimeSpan.FromSeconds(0.5));
             }
             
             // Play sound effects
             SFXManager.Play(R.Audios.SfxYamanoteChangingQuestion);
             
             // Pick next question
+            _isPicking = true;
             pickingQuestionsAutomatically = false;
             await PickNextRandomQuestion();
             SFXManager.Play(R.Audios.SfxYamanoteChangeQuestion);
             if (!_isAccelerating)
                 PlayNewQuestionAnimation();
             await UniTask.Delay(TimeSpan.FromSeconds(3));
-            pickingQuestionsAutomatically = true;
+            pickingQuestionsAutomatically = _shouldPickingQuestionsAutomatically;
+            _isPicking = false;
         }
         
         private async void OnGreenButtonClicked()
@@ -219,7 +249,7 @@ namespace USEN.Games.Yamanote
         {
             async void PickQuestion()
             {
-                ++_counter;
+                // ++_counter;
                 await questionsPicker.PickNextQuestion();
                 SFXManager.Play(R.Audios.SfxYamanoteChangeQuestion);
                 if (!_isAccelerating)
@@ -269,13 +299,6 @@ namespace USEN.Games.Yamanote
         //         }
         //     }
         // }
-        
-        private bool CheckAcceleration()
-        {
-            if (_counter >= 5 && !_isAccelerating)
-                return true;
-            return false;
-        }
 
         private async Task PlayStartupAnimation(float duration = 1 /* In seconds */ )
         {
@@ -316,7 +339,7 @@ namespace USEN.Games.Yamanote
         
         private void ShowControlButtons()
         {
-            bottomPanel.blueButton.gameObject.SetActive(true);
+            bottomPanel.blueButton.gameObject.SetActive(YamanotePreferences.DisplayMode != YamanoteDisplayMode.Normal);
             bottomPanel.redButton.gameObject.SetActive(true);
             bottomPanel.greenButton.gameObject.SetActive(true);
             bottomPanel.yellowButton.gameObject.SetActive(true);
@@ -343,6 +366,13 @@ namespace USEN.Games.Yamanote
             BgmManager.SetVolume(orginalVolume, 0.3f);
         }
         
+        private bool CheckAcceleration()
+        {
+            if (ElapsedTime > accelerationInterval && !_isAccelerating)
+                return true;
+            return false;
+        }
+        
         private void Accelerate()
         {
             // Config
@@ -352,22 +382,52 @@ namespace USEN.Games.Yamanote
             
             // Tweens
             questionsView.DOFade(0, 0.3f);
+            accelerationGroup.DOFade(1, 0.3f);
             DOTween.To(() => cloudController.speed.x, x => cloudController.speed = new Vector2(x, 0), cloudController.speed.x * 1.5f, 2f);
             DOTween.To(() => buildingsController.speed.x, x => buildingsController.speed = new Vector2(x, 0), buildingsController.speed.x * 1.5f, 2f);
             
             // Play acceleration animation
             _accelerationDirector.Play();
+            _accelerationDirector.SetSpeed(1);
             // _accelerationDirector.stopped += (director) => {
             //     pickingQuestionsAutomatically = true;
             //     questionsView.DOFade(1, 0.5f);
             // };
             
-            UniTask.WaitForSeconds(2).ContinueWith(() => {
-                pickingQuestionsAutomatically = true;
+            UniTask.WaitForSeconds(3).ContinueWith(() => {
+                // pickingQuestionsAutomatically = true;
                 questionsView.DOFade(1, 0.5f);
+                SFXManager.PlayOccasionally(R.Audios.SfxYamanoteThunder, (2, 5));
             });
             
             BgmManager.Play(R.Audios.BgmYamanoteGameAccelelation);
+        }
+        
+        private void Decelerate()
+        {
+            // Config
+            _isAccelerating = false;
+            questionInterval = 8;
+            pickingQuestionsAutomatically = _shouldPickingQuestionsAutomatically;
+            
+            // Tweens
+            questionBackground.color = questionBackground.color.WithAlpha(0);
+            questionBackground.DOFade(1, 0.6f);
+            accelerationGroup.DOFade(0, 0.3f);
+            DOTween.To(() => cloudController.speed.x, x => cloudController.speed = new Vector2(x, 0), cloudController.speed.x / 1.5f, 2f);
+            DOTween.To(() => buildingsController.speed.x, x => buildingsController.speed = new Vector2(x, 0), buildingsController.speed.x / 1.5f, 2f);
+            
+            // Play deceleration animation
+            _accelerationDirector.Play();
+            _accelerationDirector.time = 3;
+            _accelerationDirector.SetSpeed(-2);
+            
+            UniTask.WaitForSeconds(1.5f).ContinueWith(() => {
+                _accelerationDirector.Stop();
+                SFXManager.Stop(R.Audios.SfxYamanoteThunder);
+            });
+            
+            BgmManager.Play(R.Audios.BgmYamanoteGame);
         }
     }
 }

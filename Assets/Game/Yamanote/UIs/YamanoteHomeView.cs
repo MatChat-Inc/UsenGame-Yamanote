@@ -29,13 +29,18 @@ namespace USEN.Games.Yamanote
         
         private YamanoteDAO _dao;
         private List<YamanoteCategory> _categories;
-        
-        private void Start()
+
+        private void Awake()
         {
             startButton.onClick.AddListener(OnStartButtonClicked);
             settingsButton.onClick.AddListener(OnSettingsButtonClicked);
             bottomPanel.exitButton.onClick.AddListener(OnExitButtonClicked);
             
+            EventSystem.current.SetSelectedGameObject(startButton.gameObject);
+        }
+
+        private void Start()
+        {
             // Audio volume
             BgmManager.Volume = RoulettePreferences.BgmVolume;
             SFXManager.Volume = RoulettePreferences.SfxVolume;
@@ -46,8 +51,6 @@ namespace USEN.Games.Yamanote
             if (_dao.IsEmpty())
                 _dao.InsertFromJsonList(categoriesJson.text);
             _categories = _dao.GetCategories();
-            
-            EventSystem.current.SetSelectedGameObject(startButton.gameObject);
         }
 
         private void OnEnable()
@@ -71,10 +74,11 @@ namespace USEN.Games.Yamanote
 
         public void OnStartButtonClicked()
         {
-            var displayMode = YamanotePreferences.DisplayMode;
-            if (displayMode == YamanoteDisplayMode.Random)
-                PlayRandomGame();
-            else Navigator.Push<YamanoteCategoryView>((view) => view.Categories = _categories);
+            Navigator.Push<YamanoteCategoryView>((view) => view.Categories = _categories);
+            
+            // if (YamanotePreferences.DisplayMode == YamanoteDisplayMode.Random)
+            //     PlayRandomGame();
+            // else Navigator.Push<YamanoteCategoryView>((view) => view.Categories = _categories);
         }
         
         public void OnSettingsButtonClicked()

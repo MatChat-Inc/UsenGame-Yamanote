@@ -11426,12 +11426,14 @@ MonoBehaviour:
   startButton: {fileID: 3315655828931448743}
   questionsView: {fileID: 339630674189323952}
   questionsPicker: {fileID: 7648551558010374171}
+  questionBackground: {fileID: 5808943979704591639}
   highlightMask: {fileID: 3958013225986166466}
+  accelerationGroup: {fileID: 8824669456621769623}
   highlightParticles: {fileID: 6766310334278490940}
   bottomPanel: {fileID: 1090152134967780602}
   questionInterval: 8
-  pickingQuestionsAutomatically: 1
   rouletteBackground: {fileID: 0}
+  pickingQuestionsAutomatically: 0
 --- !u!225 &4539586023757126878
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11465,8 +11467,6 @@ PlayableDirector:
     value: {fileID: 8150408810397414518}
   - key: {fileID: 0}
     value: {fileID: 6343430200114564165}
-  - key: {fileID: -1424849193513065999, guid: 49d091f290da9e749a3c39a182d7e9ee, type: 2}
-    value: {fileID: 6343430200114564165}
   - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: -358559847941476656, guid: 49d091f290da9e749a3c39a182d7e9ee, type: 2}
@@ -11475,6 +11475,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 1783268312136055331, guid: 49d091f290da9e749a3c39a182d7e9ee, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 1786486875315614414, guid: 49d091f290da9e749a3c39a182d7e9ee, type: 2}
+    value: {fileID: 6343430200114564165}
   m_ExposedReferences:
     m_References:
     - 2110fdc86fd24db40a6ed6f56f68cbf5: {fileID: 8150408810397414518}
