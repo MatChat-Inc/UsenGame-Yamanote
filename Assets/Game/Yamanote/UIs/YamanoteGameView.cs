@@ -31,6 +31,7 @@ namespace USEN.Games.Yamanote
         public Image highlightMask;
         public CanvasGroup accelerationGroup;
         public ParticleSystem highlightParticles;
+        public ParticleSystem rainParticles;
         public BottomPanel bottomPanel;
         
         [HideInInspector]
@@ -218,6 +219,7 @@ namespace USEN.Games.Yamanote
             {
                 await Navigator.Push<USEN.Games.Roulette.RouletteGameView>(async (view) => {
                     view.RouletteData = RouletteManager.Instance.GetRandomRoulette();
+                    BgmManager.Resume();
                 });
             }
             else await Navigator.Push<RouletteCategoryView>();
@@ -345,6 +347,14 @@ namespace USEN.Games.Yamanote
             bottomPanel.yellowButton.gameObject.SetActive(true);
         }
         
+        private void HideControlButtons()
+        {
+            bottomPanel.blueButton.gameObject.SetActive(false);
+            bottomPanel.redButton.gameObject.SetActive(false);
+            bottomPanel.greenButton.gameObject.SetActive(false);
+            bottomPanel.yellowButton.gameObject.SetActive(false);
+        }
+        
         private async void PopupConfirmView()
         {
             var orginalVolume = BgmManager.Volume;
@@ -389,15 +399,18 @@ namespace USEN.Games.Yamanote
             // Play acceleration animation
             _accelerationDirector.Play();
             _accelerationDirector.SetSpeed(1);
-            // _accelerationDirector.stopped += (director) => {
-            //     pickingQuestionsAutomatically = true;
-            //     questionsView.DOFade(1, 0.5f);
-            // };
             
+            HideControlButtons();
             UniTask.WaitForSeconds(3).ContinueWith(() => {
                 // pickingQuestionsAutomatically = true;
                 questionsView.DOFade(1, 0.5f);
                 SFXManager.PlayOccasionally(R.Audios.SfxYamanoteThunder, (2, 5));
+                
+                rainParticles.startColor = rainParticles.startColor.WithAlpha(0);
+                rainParticles.Play();
+                DOTween.To(() => rainParticles.startColor, x => rainParticles.startColor = x, rainParticles.startColor.WithAlpha(0.5f), 1f);
+                
+                ShowControlButtons();
             });
             
             BgmManager.Play(R.Audios.BgmYamanoteGameAccelelation);
@@ -421,6 +434,7 @@ namespace USEN.Games.Yamanote
             _accelerationDirector.Play();
             _accelerationDirector.time = 3;
             _accelerationDirector.SetSpeed(-2);
+            rainParticles.Stop();
             
             UniTask.WaitForSeconds(1.5f).ContinueWith(() => {
                 _accelerationDirector.Stop();

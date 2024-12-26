@@ -10387,6 +10387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b23ecb3b5d84f5881e159ef962e96cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapMode: 0
   itemCount: 0
   cellPrefab: {fileID: 3766435995385868153}
   snapToCellWhenSelected: 1
@@ -11363,6 +11364,7 @@ RectTransform:
   - {fileID: 6899661036974979411}
   - {fileID: 7048538923290098153}
   - {fileID: 5441015847192198489}
+  - {fileID: 6133038597520603946}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11430,8 +11432,10 @@ MonoBehaviour:
   highlightMask: {fileID: 3958013225986166466}
   accelerationGroup: {fileID: 8824669456621769623}
   highlightParticles: {fileID: 6766310334278490940}
+  rainParticles: {fileID: 1776786402463531599}
   bottomPanel: {fileID: 1090152134967780602}
   questionInterval: 8
+  accelerationInterval: 20
   rouletteBackground: {fileID: 0}
   pickingQuestionsAutomatically: 0
 --- !u!225 &4539586023757126878
@@ -11532,6 +11536,7 @@ GameObject:
   - component: {fileID: 8824669456621769623}
   - component: {fileID: 364614465942471871}
   - component: {fileID: 6020949237057411974}
+  - component: {fileID: 4983212023261012707}
   m_Layer: 0
   m_Name: Acceleration
   m_TagString: Untagged
@@ -11609,6 +11614,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!223 &4983212023261012707
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8150408810397414518}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1 &8430970820447887704
 GameObject:
   m_ObjectHideFlags: 0
@@ -17410,4 +17436,79 @@ MonoBehaviour:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8796279736146354241, guid: 0c380f4697fab384e97d3c38dbb7f523, type: 3}
   m_PrefabInstance: {fileID: 3571625832299437336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5255483904873614736
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5372649776146153118}
+    m_Modifications:
+    - target: {fileID: 2158302672736745146, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158302672736745146, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158302672736745146, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158302672736745146, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158302672736745146, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158302672736745146, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158302672736745146, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158302672736745146, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158302672736745146, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158302672736745146, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158302672736745146, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373659981265101344, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_Name
+      value: Rain
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784683600072085471, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288118759463248613, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+--- !u!198 &1776786402463531599 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5784683600072085471, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+  m_PrefabInstance: {fileID: 5255483904873614736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6133038597520603946 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2158302672736745146, guid: 551ae7aff6819a74ca339fb0f422a63b, type: 3}
+  m_PrefabInstance: {fileID: 5255483904873614736}
   m_PrefabAsset: {fileID: 0}
