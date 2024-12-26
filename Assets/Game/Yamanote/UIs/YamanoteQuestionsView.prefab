@@ -222,11 +222,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c06bb54486e1f498265e3d71e6f3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapMode: 1
   cell: {fileID: 663767444937052668}
-  snapToCellWhenSelected: 1
   selectFirstCellOnEnable: 1
   selectFirstCellOnReload: 1
   keepSelectionOnReload: 1
+  snapToCellWhenSelected: 1
   ring: {fileID: 3606815820171249036}
 --- !u!225 &6521703121215702397
 CanvasGroup:
@@ -1080,7 +1081,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 880, y: -95}
-  m_SizeDelta: {x: 1460, y: 190}
+  m_SizeDelta: {x: 1440, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2007720770020963925
 CanvasRenderer:
@@ -1140,9 +1141,9 @@ MonoBehaviour:
   m_fontSize: 60
   m_fontSizeBase: 60
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 30
+  m_fontSizeMax: 60
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
@@ -2683,7 +2684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 150
-    m_Right: 0
+    m_Right: 50
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
