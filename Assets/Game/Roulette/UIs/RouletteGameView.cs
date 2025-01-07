@@ -218,8 +218,6 @@ namespace USEN.Games.Roulette
             
             // Play sfx
             SFXManager.PlayRepeatedly(R.Audios.SfxRouletteGameRotating);
-            
-            bottomPanel.confirmButton.gameObject.SetActive(false);
         }
         
         private async Task StopWheel()
@@ -240,6 +238,8 @@ namespace USEN.Games.Roulette
             // Stop sfx and play another sfx
             SFXManager.Stop(R.Audios.SfxRouletteGameRotating);
             SFXManager.Play(R.Audios.SfxRouletteGameDecelerating);
+            
+            bottomPanel.confirmButton.gameObject.SetActive(false);
         }
 
         private void PopupConfirmView()
