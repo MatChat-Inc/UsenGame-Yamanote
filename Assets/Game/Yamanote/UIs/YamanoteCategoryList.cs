@@ -3,6 +3,7 @@ using System.Linq;
 using Luna;
 using Luna.UI;
 using Luna.UI.Navigation;
+using Modules.UI.Misc;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -45,17 +46,28 @@ namespace USEN.Games.Yamanote
         private void OnCellClickOrSubmit(int index, FixedListViewCell<YamanoteCategory> cell)
         {
             var categoryCell = (YamanoteCategoryListCell)cell;
+            var category = Data.Find(c => c.Name == categoryCell.text.text);
             
-            Navigator.Push<YamanoteQuestionsView>((view) =>
+            if (YamanotePreferences.DisplayMode == YamanoteDisplayMode.Random)
             {
-                var category = Data.Find(c => c.Name == categoryCell.text.text);
+                // Play random game
+                if (category != null)
+                {
+                    var questions = category.Questions.Shuffle().ToList();
+                    Navigator.Push<YamanoteGameView>((view) => {
+                        view.Questions = questions;
+                    });
+                }
+            }
+            else Navigator.Push<YamanoteQuestionsView>((view) => {
                 if (category != null)   
                     view.Category = category;
             });
             
             SFXManager.Play(R.Audios.SfxConfirm);
         }
-        
+
+
         private void Update()
         {
             // Pin every cell to the circumference of the ring
