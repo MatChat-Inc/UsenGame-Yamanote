@@ -89,8 +89,6 @@ namespace USEN.Games.Yamanote
         
         private void Update()
         {
-            Debug.Log("Elapsed Time: " + ElapsedTime);
-            
             if (Input.GetKeyDown(KeyCode.Escape) ||
                 Input.GetButtonDown("Cancel")) {
                 OnExitButtonClicked();

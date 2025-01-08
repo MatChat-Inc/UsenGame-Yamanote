@@ -10,6 +10,8 @@ namespace USEN.Games.Yamanote
 {
 	public partial class YamanoteDAO
 	{
+		public static YamanoteDAO Instance { get; } = new();
+		
 		public readonly SQLiteConnection db;
 
 		// Called when the node enters the scene tree for the first time.
@@ -84,6 +86,16 @@ namespace USEN.Games.Yamanote
 				};
 
 			return categories.ToList();
+		}
+		
+		public bool UpdateQuestion(YamanoteQuestion question)
+		{
+			return db.Update(question) > 0;
+		}
+		
+		public bool DeleteQuestion(YamanoteQuestion question)
+		{
+			return db.Delete(question) > 0;
 		}
 
 		private void Test()

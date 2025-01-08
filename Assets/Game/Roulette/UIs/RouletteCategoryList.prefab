@@ -147,8 +147,7 @@ MonoBehaviour:
   m_text: "\u30AA\u30EA\u30B8\u30CA\u30EB\u30B2\u30FC\u30E01\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aeafe3b2832e99740b7f7efb3f866985, type: 2}
-  m_sharedMaterial: {fileID: -3018244264691352348, guid: aeafe3b2832e99740b7f7efb3f866985,
-    type: 2}
+  m_sharedMaterial: {fileID: -3018244264691352348, guid: aeafe3b2832e99740b7f7efb3f866985, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -467,11 +466,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5865bd9ae1864c45ba63bc6477fa326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: []
+  snapMode: 0
   cell: {fileID: 8852818959337777196}
-  snapToCellWhenSelected: 1
   selectFirstCellOnEnable: 1
   selectFirstCellOnReload: 1
+  keepSelectionOnReload: 1
+  snapToCellWhenSelected: 1
 --- !u!225 &951830863657339188
 CanvasGroup:
   m_ObjectHideFlags: 0

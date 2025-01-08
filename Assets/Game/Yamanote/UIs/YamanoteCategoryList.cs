@@ -46,8 +46,10 @@ namespace USEN.Games.Yamanote
         private void OnCellClickOrSubmit(int index, FixedListViewCell<YamanoteCategory> cell)
         {
             var categoryCell = (YamanoteCategoryListCell)cell;
-            var category = Data.Find(c => c.Name == categoryCell.text.text);
-            
+            var category = Data.Find(c => c.Name == categoryCell.text.text) ?? new YamanoteCategory() {
+                Name = categoryCell.text.text,
+            };
+
             if (YamanotePreferences.DisplayMode == YamanoteDisplayMode.Random)
             {
                 // Play random game
