@@ -107,10 +107,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  clickAudio: {fileID: 0}
-  submitAudio: {fileID: 0}
+  clickAudio: {fileID: 8300000, guid: 9a521da133e3fbe4d94ce188d13d1194, type: 3}
+  submitAudio: {fileID: 8300000, guid: 9a521da133e3fbe4d94ce188d13d1194, type: 3}
   hoverAudio: {fileID: 0}
-  selectAudio: {fileID: 0}
+  selectAudio: {fileID: 8300000, guid: 3d04672c53227314ba61fcefc49fcdb5, type: 3}
   mute: 0
   focusOnEnable: 0
 --- !u!114 &6651989584787384310
@@ -424,7 +424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4664874008542513870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -721,7 +721,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 7395099387235637532}
   m_OnClick:
     m_PersistentCalls:
@@ -738,10 +738,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  clickAudio: {fileID: 0}
-  submitAudio: {fileID: 0}
+  clickAudio: {fileID: 8300000, guid: 9a521da133e3fbe4d94ce188d13d1194, type: 3}
+  submitAudio: {fileID: 8300000, guid: 9a521da133e3fbe4d94ce188d13d1194, type: 3}
   hoverAudio: {fileID: 0}
-  selectAudio: {fileID: 0}
+  selectAudio: {fileID: 8300000, guid: 3d04672c53227314ba61fcefc49fcdb5, type: 3}
   mute: 0
   focusOnEnable: 0
 --- !u!114 &2372531075425713701

@@ -220,9 +220,9 @@ namespace USEN.Games.Yamanote
                     BgmManager.Resume();
                 });
             }
-            else await Navigator.Push<RouletteCategoryView>();
-            
-            await UniTask.NextFrame();
+            else await Navigator.Push<RouletteStartView>(view => {
+                BgmManager.Resume();
+            }); 
         }
 
         private async void OnYellowButtonClicked()

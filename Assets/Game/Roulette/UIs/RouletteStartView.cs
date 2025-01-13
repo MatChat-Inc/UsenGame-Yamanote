@@ -27,7 +27,7 @@ namespace USEN.Games.Roulette
         
         private void Start()
         {
-            BgmManager.Play(bgmClip);
+            // BgmManager.Play(bgmClip);
             
             // Preload all roulette widgets
             Assets.Load<Object>(GetType().Namespace, "Audio");
@@ -39,10 +39,6 @@ namespace USEN.Games.Roulette
             Navigator.Instance.onPopped += (route) => {
                 SFXManager.Play(R.Audios.SfxBack);
             };
-
-#if UNITY_ANDROID
-            Debug.Log($"TV: {USEN.AndroidPreferences.TVIdentifier}");      
-#endif
         }
 
         private void OnEnable()
@@ -86,7 +82,7 @@ namespace USEN.Games.Roulette
 
         private void OnDestroy()
         {
-            BgmManager.Stop();
+            // BgmManager.Stop();
             
             // Unload all roulette widgets
             // Widget.Unload(GetType().Namespace);
@@ -115,10 +111,7 @@ namespace USEN.Games.Roulette
         
         public void OnExitButtonClicked()
         {
-            // Application.Quit();
-#if UNITY_ANDROID
-            Android.Back();
-#endif
+            Navigator.Pop();
         }
     }
 }
