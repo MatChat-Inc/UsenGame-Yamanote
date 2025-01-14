@@ -213,16 +213,17 @@ namespace USEN.Games.Yamanote
         
         private async void OnGreenButtonClicked()
         {
-            if (RoulettePreferences.DisplayMode == RouletteDisplayMode.Random)
-            {
-                await Navigator.Push<USEN.Games.Roulette.RouletteGameView>(async (view) => {
-                    view.RouletteData = RouletteManager.Instance.GetRandomRoulette();
-                    BgmManager.Resume();
-                });
-            }
-            else await Navigator.Push<RouletteStartView>(view => {
+            await Navigator.Push<RouletteGameSelectionView>((view) => {
+                view.Category = RouletteManager.Instance.GetCategory("バツゲーム");
                 BgmManager.Resume();
-            }); 
+                
+                if (RoulettePreferences.DisplayMode == RouletteDisplayMode.Random)
+                { 
+                    Navigator.Push<USEN.Games.Roulette.RouletteGameView>(async (view) => {
+                        view.RouletteData = RouletteManager.Instance.GetRandomRoulette();
+                    });
+                }
+            });
         }
 
         private async void OnYellowButtonClicked()

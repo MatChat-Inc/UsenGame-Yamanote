@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "309af56c",
         "name": "com.usen.uyamanote",
-        "processId": 17059,
+        "processId": 25707,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -54,12 +54,6 @@
             "deviceId": "309af56c",
             "name": "com.usen.uyamanote",
             "processId": 25707,
-            "exited": false
-        },
-        {
-            "deviceId": "309af56c",
-            "name": "com.usen.uyamanote",
-            "processId": 17059,
             "exited": false
         }
     ],
