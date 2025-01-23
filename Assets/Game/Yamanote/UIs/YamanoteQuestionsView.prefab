@@ -2431,6 +2431,7 @@ GameObject:
   - component: {fileID: 7857152896367561377}
   - component: {fileID: 910278663855395303}
   - component: {fileID: 663767444937052668}
+  - component: {fileID: 1559270722963939260}
   m_Layer: 5
   m_Name: Cell
   m_TagString: Untagged
@@ -2591,6 +2592,19 @@ MonoBehaviour:
   text: {fileID: 6448522843541325758}
   background: {fileID: 5107154218277146478}
   ringCollider: {fileID: 4677026422372769721}
+  canvasGroup: {fileID: 0}
+--- !u!225 &1559270722963939260
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5958428276643485439}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8322405204327452689
 GameObject:
   m_ObjectHideFlags: 0

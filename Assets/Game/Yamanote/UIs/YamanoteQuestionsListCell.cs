@@ -6,11 +6,15 @@ using UnityEngine.UI;
 
 namespace USEN.Games.Yamanote
 {
+    [RequireComponent(typeof(CanvasGroup))]
     public class YamanoteQuestionsListCell : FixedListViewCell<YamanoteQuestion>
     {
         public TextMeshProUGUI text;
         public Image background;
         public CircleCollider2D ringCollider;
+
+        [HideInInspector]
+        public CanvasGroup canvasGroup;
 
         public override YamanoteQuestion Data
         {
@@ -20,6 +24,13 @@ namespace USEN.Games.Yamanote
                 data = value;
                 text.text = value.Content;
             }
+        }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            
+            canvasGroup = GetComponent<CanvasGroup>();
         }
     }
 }

@@ -7,13 +7,24 @@ using UnityEngine.UI;
 
 namespace USEN.Games.Yamanote
 {
+    [RequireComponent(typeof(CanvasGroup))]
     public class YamanoteCategoryListCell : FixedListViewCell<YamanoteCategory>
     {
         public TextMeshProUGUI text;
         public Image background;
         public CircleCollider2D ringCollider;
+        
+        [HideInInspector]
+        public CanvasGroup canvasGroup;
 
         public override YamanoteCategory Data { get; set; }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            
+            canvasGroup = GetComponent<CanvasGroup>();
+        }
 
         protected override void Start()
         {
