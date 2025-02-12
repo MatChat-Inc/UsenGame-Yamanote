@@ -35,7 +35,6 @@ namespace USEN.Games.Yamanote
         {
             // Pin every cell to the circumference of the ring
             UpdateCellPositions();
-            Debug.Log($"IndexFromEdge: {VisibleIndex}");
         }
 
         private void UpdateCellPositions()
