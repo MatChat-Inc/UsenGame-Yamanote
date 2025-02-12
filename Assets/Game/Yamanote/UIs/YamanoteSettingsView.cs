@@ -54,6 +54,7 @@ namespace USEN.Games.Yamanote
             commendationVideoSettingsSlider.onValueChanged.AddListener(OnCommendationVideoSettingsSliderValueChanged);
             commendationVideoSettingsSlider.value = YamanotePreferences.CommendationVideoOption;
             commendationVideoSettingsToggles.ToggleOn(YamanotePreferences.CommendationVideoOption);
+            commendationVideoSettingsToggles.Bind(commendationVideoSettingsSlider);
             
             // Audio volume
             bgmVolumeText.text = $"{YamanotePreferences.BgmVolume * 100:0}";

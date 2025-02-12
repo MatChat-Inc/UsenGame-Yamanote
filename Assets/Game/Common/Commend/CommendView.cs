@@ -10,6 +10,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.Video;
 using USEN.Games.Roulette;
+using USEN.Games.Yamanote;
 
 namespace USEN.Games.Common
 {
@@ -27,7 +28,7 @@ namespace USEN.Games.Common
         private void Start()
         {
             // Play video
-            var index = RoulettePreferences.CommendationVideoOption;
+            var index = YamanotePreferences.CommendationVideoOption;
              
             videoPlayer.targetCamera = Camera.main;
             
