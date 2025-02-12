@@ -152,7 +152,7 @@ namespace USEN.Games.Roulette
                     ResetRoulette();
                     RouletteData roulette;
                     do { 
-                        roulette = RouletteManager.Instance.GetRandomRoulette();
+                        roulette = RouletteManager.Instance.GetRandomRoulette(RouletteData.Category);
                     } while (roulette == RouletteData);
                     RouletteData = roulette;
                     break;

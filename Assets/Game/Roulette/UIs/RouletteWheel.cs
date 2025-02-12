@@ -308,6 +308,8 @@ namespace USEN.Games.Roulette
             text.text = Sectors[index].content;
             text.horizontalAlignment = HorizontalAlignmentOptions.Left;
             text.verticalAlignment = VerticalAlignmentOptions.Middle;
+            text.enableWordWrapping = true;
+            text.overflowMode = TextOverflowModes.Ellipsis;
             text.sortingOrder = 2;
             text.font = font ? font : Resources.Load<TMP_FontAsset>("Fonts & Materials/LiberationSans SDF");
             // text.material = fontMaterial ? fontMaterial : text.font.material;
