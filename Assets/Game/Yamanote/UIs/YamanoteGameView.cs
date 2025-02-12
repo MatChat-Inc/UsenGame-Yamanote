@@ -148,6 +148,7 @@ namespace USEN.Games.Yamanote
             
             startButton.gameObject.SetActive(false);
             questionsView.gameObject.SetActive(true);
+            bottomPanel.confirmButton.gameObject.SetActive(false);
             
             SFXManager.Play(R.Audios.SfxConfirm);
             
