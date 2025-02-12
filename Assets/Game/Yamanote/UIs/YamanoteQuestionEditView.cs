@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using Luna.UI;
 using Luna.UI.Navigation;
 using Modules.UI.Misc;
@@ -32,17 +33,14 @@ namespace USEN.Games.Yamanote
                 inputField.text = value.Content;
             }
         }
-
-        private void OnEnable()
-        {
-            inputField.Select();
-        }
-
+        
         private void Start()
         {
+            inputField.Select();
             saveAndPlayButton.onClick.AddListener(OnSaveAndPlayButtonClicked);
             saveButton.onClick.AddListener(OnSaveButtonClicked);
-            inputField.onSubmit.AddListener((value) => {
+            inputField.onSubmit.AddListener(async (value) => {
+                await UniTask.NextFrame();
                 saveAndPlayButton.Select();
             });
         }
@@ -64,6 +62,28 @@ namespace USEN.Games.Yamanote
             if (Input.GetKeyDown(KeyCode.Escape) ||
                 Input.GetButtonDown("Cancel")) {
                 Navigator.Pop((question: Question, shouldPlay: false));
+            }
+            
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (EventSystem.current.currentSelectedGameObject == inputField.gameObject) 
+                    saveAndPlayButton.Select();
+            }
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                if (EventSystem.current.currentSelectedGameObject == saveButton.gameObject ||
+                    EventSystem.current.currentSelectedGameObject == saveAndPlayButton.gameObject) {
+                    inputField.Select();
+                }
+                    
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow) || 
+                Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                if (EventSystem.current.currentSelectedGameObject == saveButton.gameObject) 
+                    saveAndPlayButton.Select();
+                else if (EventSystem.current.currentSelectedGameObject == saveAndPlayButton.gameObject) 
+                    saveButton.Select();
             }
         }
         
