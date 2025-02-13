@@ -216,7 +216,7 @@ namespace USEN.Games.Yamanote
         {
             await Navigator.Push<RouletteGameSelectionView>((view) => {
                 view.Category = RouletteManager.Instance.GetCategory("バツゲーム");
-                BgmManager.Resume();
+                // BgmManager.Resume();
                 
                 if (RoulettePreferences.DisplayMode == RouletteDisplayMode.Random)
                 { 
