@@ -23,6 +23,9 @@ namespace USEN.Games.Yamanote
                 _category = value;
                 titleText.text = value.Name;
                 listView.Data = value.Questions;
+                
+                if (Category.Name != "オリジナル") 
+                    bottomPanel.yellowButton.gameObject.SetActive(false);
             }
         }
     
