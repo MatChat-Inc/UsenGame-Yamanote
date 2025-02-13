@@ -1,12 +1,13 @@
 // Created by LunarEclipse on 2024-6-21 1:53.
 
+using System.Threading.Tasks;
 using DG.Tweening;
 using Luna;
+using Luna.Extensions;
 using Luna.UI;
 using Luna.UI.Navigation;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace USEN.Games.Yamanote
@@ -20,6 +21,10 @@ namespace USEN.Games.Yamanote
         private void Start()
         {
             SFXManager.Play(R.Audios.SfxYamanoteGameOver);
+            SFXManager.PlayRepeatedly(R.Audios.SfxYamanoteRain, (-6, -3));
+            Task.Delay(Random.Range(3000, 5000)).Then(_ => {
+                SFXManager.PlayRepeatedly(R.Audios.SfxYamanoteWind, (3, 10));
+            });
             
             startButton.onClick.AddListener(OnStartButtonClicked);
             settingsButton.onClick.AddListener(OnSettingsButtonClicked);
@@ -34,6 +39,11 @@ namespace USEN.Games.Yamanote
             
             // Train tween animation
             trainImage.transform.DOLocalMoveX(-5000, 1.5f).SetEase(Ease.OutSine);
+        }
+
+        private void OnDestroy()
+        {
+            SFXManager.StopAll();
         }
 
         private void Update()
