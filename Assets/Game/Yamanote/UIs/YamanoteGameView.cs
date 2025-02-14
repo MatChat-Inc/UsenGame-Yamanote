@@ -36,7 +36,8 @@ namespace USEN.Games.Yamanote
         
         [HideInInspector]
         public float questionInterval = 8;
-        public float accelerationInterval = 20;
+        [HideInInspector]
+        public float accelerationInterval = 18;
         
         public Sprite rouletteBackground;
         
@@ -78,11 +79,10 @@ namespace USEN.Games.Yamanote
 
         private void Start()
         {
-            BgmManager.Play(R.Audios.BgmYamanoteGame);
-
             cloudController.speed = new Vector2(-0.05f, 0f);
             buildingsController.speed = new Vector2(-0.5f, 0f);
             startButton.onClick.AddListener(OnStartButtonClicked);
+            accelerationInterval = (!R.Audios.BgmYamanoteGame).length;
             
             EventSystem.current.SetSelectedGameObject(startButton.gameObject);
         }
@@ -150,6 +150,7 @@ namespace USEN.Games.Yamanote
             questionsView.gameObject.SetActive(true);
             bottomPanel.confirmButton.gameObject.SetActive(false);
             
+            BgmManager.Play(R.Audios.BgmYamanoteGame);
             SFXManager.Play(R.Audios.SfxConfirm);
             
             await PlayStartupAnimation(0.5f);
