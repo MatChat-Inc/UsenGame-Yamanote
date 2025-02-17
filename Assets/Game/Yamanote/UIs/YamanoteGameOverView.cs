@@ -25,7 +25,8 @@ namespace USEN.Games.Yamanote
             SFXManager.Play(R.Audios.SfxYamanoteGameOver);
             SFXManager.PlayRepeatedly(R.Audios.SfxYamanoteRain, (-6, -3));
             Task.Delay(Random.Range(3000, 5000)).Then(_ => {
-                SFXManager.PlayRepeatedly(R.Audios.SfxYamanoteWind, (3, 10));
+                if (this != null)
+                    SFXManager.PlayRepeatedly(R.Audios.SfxYamanoteWind, (3, 10));
             });
             
             startButton.onClick.AddListener(OnStartButtonClicked);
