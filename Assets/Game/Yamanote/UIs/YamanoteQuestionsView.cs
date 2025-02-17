@@ -23,9 +23,13 @@ namespace USEN.Games.Yamanote
                 _category = value;
                 titleText.text = value.Name;
                 listView.Data = value.Questions;
-                
-                if (Category.Name != "オリジナル") 
+
+                if (Category.Name != "オリジナル")
+                {
+                    bottomPanel.redButton.gameObject.SetActive(false);
+                    bottomPanel.blueButton.gameObject.SetActive(false);
                     bottomPanel.yellowButton.gameObject.SetActive(false);
+                }
             }
         }
     
@@ -113,8 +117,28 @@ namespace USEN.Games.Yamanote
             listView.RemoveSelected();
             YamanoteDAO.Instance.DeleteQuestion(selectedQuestion);
         }
+        
+        public void PlaySequentially()
+        {
+            Navigator.Push<YamanoteGameView>((view) => {
+                view.Questions = Category.Questions;
+            });
+        }
+        
+        public void PlaySelectedQuestion()
+        {
+            var selectedQuestion = listView.SelectedData;
+            PlayWithQuestion(selectedQuestion);
+        }
 
-        private void PlayWithQuestion(YamanoteQuestion question)
+        public void PlayRandomQuestion()
+        {
+            Navigator.Push<YamanoteGameView>((view) => {
+                view.Questions = Category.Questions.Shuffle().ToList();
+            });
+        }
+        
+        public void PlayWithQuestion(YamanoteQuestion question)
         {
             Navigator.Push<YamanoteGameView>((view) => {
                 var questions = Category.Questions.Shuffle().ToList();
