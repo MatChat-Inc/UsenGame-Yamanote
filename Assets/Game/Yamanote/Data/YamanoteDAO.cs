@@ -10,9 +10,13 @@ namespace USEN.Games.Yamanote
 {
 	public partial class YamanoteDAO
 	{
+		public const int VERSION = 1;
+		
 		public static YamanoteDAO Instance { get; } = new();
 		
 		public readonly SQLiteConnection db;
+		
+		public bool NeedsUpdate => db.ExecuteScalar<int>("PRAGMA user_version") < VERSION;
 
 		// Called when the node enters the scene tree for the first time.
 		public YamanoteDAO(string databaseName = null)
@@ -39,6 +43,9 @@ namespace USEN.Games.Yamanote
 		
 		public void InsertFromJsonList(string json)
 		{
+			if (string.IsNullOrEmpty(json))
+				return;
+			
 			var questions = JsonConvert.DeserializeObject<List<YamanoteQuestion>>(json);
 
 			// New transaction to add all questions at once.
@@ -96,6 +103,22 @@ namespace USEN.Games.Yamanote
 		public bool DeleteQuestion(YamanoteQuestion question)
 		{
 			return db.Delete(question) > 0;
+		}
+		
+		public void UpdateTable(string json)
+		{
+			var version = db.ExecuteScalar<int>("PRAGMA user_version");
+			Debug.Log($"[YamanoteDAO] Database version: {version}");
+			
+			if (version < VERSION)
+			{
+				db.Execute("DELETE FROM questions WHERE category != 'オリジナル'");
+				InsertFromJsonList(json);
+				db.Execute($"PRAGMA user_version = {VERSION}");
+				Debug.Log($"[YamanoteDAO] Database updated to version {VERSION}");
+			}
+			else if (IsEmpty())
+				InsertFromJsonList(json);
 		}
 
 		private void Test()

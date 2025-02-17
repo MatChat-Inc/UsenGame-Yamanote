@@ -47,9 +47,8 @@ namespace USEN.Games.Yamanote
             
             BgmManager.Play(R.Audios.BgmYamanote);
             
-            _dao = new();
-            if (_dao.IsEmpty())
-                _dao.InsertFromJsonList(categoriesJson.text);
+            _dao = YamanoteDAO.Instance;
+            _dao.UpdateTable(categoriesJson.text);
             _categories = _dao.GetCategories();
         }
 
