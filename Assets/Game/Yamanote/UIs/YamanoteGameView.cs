@@ -62,8 +62,8 @@ namespace USEN.Games.Yamanote
             {
                 _questions = value;
                 questionsPicker.itemCount = Int32.MaxValue;
-                questionsPicker.ItemBuilder = (index) =>
-                {
+                questionsPicker.ItemBuilder = (index) => {
+                    if (_questions.Count == 0) return "";
                     return _questions[index.Mod(_questions.Count)].Content;
                 };
             }

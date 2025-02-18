@@ -86,22 +86,14 @@ namespace USEN.Games.Yamanote
                 
         private async void OnRedButtonClicked()
         {
-            var newQuestion = new YamanoteQuestion() {
-                Content = "",
-                Category = "オリジナル",
-                Theme = "オリジナル",
-            };
-
             var result = await Navigator.Push<YamanoteQuestionEditView>((view) => {
-                view.Question = newQuestion;
+                // view.Question = newQuestion;
             }) as (YamanoteQuestion question, bool shouldPlay)?;
             
             if (result == null || string.IsNullOrEmpty(result.Value.question.Content)) return;
 
             var question = result.Value.question;
             Category.Questions.Add(question);
-            
-            YamanoteDAO.Instance.AddQuestion(question);
             
             if (result.Value.shouldPlay)
                 PlayWithQuestion(question);

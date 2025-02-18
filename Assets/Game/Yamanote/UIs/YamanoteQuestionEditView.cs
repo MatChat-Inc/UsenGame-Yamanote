@@ -36,13 +36,18 @@ namespace USEN.Games.Yamanote
         
         private void Start()
         {
+            // saveAndPlayButton.onClick.AddListener(OnSaveAndPlayButtonClicked);
+            // saveButton.onClick.AddListener(OnSaveButtonClicked);
+            bottomPanel.onBlueButtonClicked += OnSaveAndPlayButtonClicked;
+            bottomPanel.onRedButtonClicked += OnSaveButtonClicked;
+            if (!string.IsNullOrEmpty(Question?.Content)) {
+                inputField.onFocusSelectAll = true;
+            }
+            // inputField.onSubmit.AddListener(async (value) => {
+            //     await UniTask.NextFrame();
+            //     saveAndPlayButton.Select();
+            // });
             inputField.Select();
-            saveAndPlayButton.onClick.AddListener(OnSaveAndPlayButtonClicked);
-            saveButton.onClick.AddListener(OnSaveButtonClicked);
-            inputField.onSubmit.AddListener(async (value) => {
-                await UniTask.NextFrame();
-                saveAndPlayButton.Select();
-            });
         }
 
         private void OnSaveAndPlayButtonClicked()
@@ -64,33 +69,44 @@ namespace USEN.Games.Yamanote
                 Navigator.Pop((question: Question, shouldPlay: false));
             }
             
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                if (EventSystem.current.currentSelectedGameObject == inputField.gameObject) 
-                    saveAndPlayButton.Select();
-            }
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                if (EventSystem.current.currentSelectedGameObject == saveButton.gameObject ||
-                    EventSystem.current.currentSelectedGameObject == saveAndPlayButton.gameObject) {
-                    inputField.Select();
-                }
-                    
-            }
-            if (Input.GetKeyDown(KeyCode.RightArrow) || 
-                Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                if (EventSystem.current.currentSelectedGameObject == saveButton.gameObject) 
-                    saveAndPlayButton.Select();
-                else if (EventSystem.current.currentSelectedGameObject == saveAndPlayButton.gameObject) 
-                    saveButton.Select();
-            }
+            // if (Input.GetKeyDown(KeyCode.DownArrow))
+            // {
+            //     if (EventSystem.current.currentSelectedGameObject == inputField.gameObject) 
+            //         saveAndPlayButton.Select();
+            // }
+            // if (Input.GetKeyDown(KeyCode.UpArrow))
+            // {
+            //     if (EventSystem.current.currentSelectedGameObject == saveButton.gameObject ||
+            //         EventSystem.current.currentSelectedGameObject == saveAndPlayButton.gameObject) {
+            //         inputField.Select();
+            //     }
+            //         
+            // }
+            // if (Input.GetKeyDown(KeyCode.RightArrow) || 
+            //     Input.GetKeyDown(KeyCode.LeftArrow))
+            // {
+            //     if (EventSystem.current.currentSelectedGameObject == saveButton.gameObject) 
+            //         saveAndPlayButton.Select();
+            //     else if (EventSystem.current.currentSelectedGameObject == saveAndPlayButton.gameObject) 
+            //         saveButton.Select();
+            // }
         }
         
         private void SaveChanges()
         {
-            _question.Content = inputField.text;
-            YamanoteDAO.Instance.UpdateQuestion(_question);
+            if (_question == null)
+            {
+                var newQuestion = new YamanoteQuestion() {
+                    Content = inputField.text,
+                    Category = "オリジナル",
+                    Theme = "オリジナル",
+                };
+                _question = newQuestion;
+                YamanoteDAO.Instance.AddQuestion(newQuestion);
+            } else {
+                _question.Content = inputField.text;
+                YamanoteDAO.Instance.UpdateQuestion(_question);
+            }
         }
     }
 }

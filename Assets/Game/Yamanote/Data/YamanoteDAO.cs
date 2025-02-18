@@ -60,11 +60,6 @@ namespace USEN.Games.Yamanote
 			return !db.Table<YamanoteQuestion>().Any();
 		}
 
-		public void AddQuestion(YamanoteQuestion question)
-		{
-			db.Insert(question);
-		}
-
 		public List<YamanoteQuestion> GetQuestions(string fromCategory = null)
 		{
 			var questions = db.Query<YamanoteQuestion>("SELECT * FROM questions");
@@ -93,6 +88,11 @@ namespace USEN.Games.Yamanote
 				};
 
 			return categories.ToList();
+		}
+		
+		public bool AddQuestion(YamanoteQuestion question)
+		{
+			return db.Insert(question) > 0;
 		}
 		
 		public bool UpdateQuestion(YamanoteQuestion question)

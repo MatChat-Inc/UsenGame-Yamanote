@@ -23,6 +23,11 @@ namespace USEN.Games.Yamanote
         {
             listView.FocusOnCell(0);
         }
+        
+        private void OnEnable()
+        {
+            Categories = YamanoteDAO.Instance.GetCategories();
+        }
 
         private void Update()
         {
@@ -30,6 +35,5 @@ namespace USEN.Games.Yamanote
                 Input.GetButtonDown("Cancel")) 
                 Navigator.Pop();
         }
-
     }
 }
