@@ -173,6 +173,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - UI
     - USEN.Games.Yamanote
+  - m_GUID: bc4272d9a8e67cc4bb0cb91cd3c33df0
+    m_Address: USEN.Games.Common.PopupOptionsView2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    - USEN.Games.Common
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 19ecc521cb0da484a839d120332326fe, type: 2}
   m_SchemaSet:

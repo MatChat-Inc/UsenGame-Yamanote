@@ -17,6 +17,7 @@ using UnityEngine.Playables;
 using UnityEngine.UI;
 using USEN.Games.Common;
 using USEN.Games.Roulette;
+using Object = UnityEngine.Object;
 
 namespace USEN.Games.Yamanote
 {
@@ -82,7 +83,6 @@ namespace USEN.Games.Yamanote
             cloudController.speed = new Vector2(-0.05f, 0f);
             buildingsController.speed = new Vector2(-0.5f, 0f);
             startButton.onClick.AddListener(OnStartButtonClicked);
-            accelerationInterval = (!R.Audios.BgmYamanoteGame).length;
             
             EventSystem.current.SetSelectedGameObject(startButton.gameObject);
         }

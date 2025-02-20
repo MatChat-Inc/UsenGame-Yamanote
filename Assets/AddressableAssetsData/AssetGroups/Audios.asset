@@ -60,16 +60,19 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Common
   - m_GUID: 9a521da133e3fbe4d94ce188d13d1194
     m_Address: Assets/Game/Common/Audios/sfx_confirm.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Common
   - m_GUID: 3d04672c53227314ba61fcefc49fcdb5
     m_Address: Assets/Game/Common/Audios/sfx_select.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Common
   - m_GUID: 7c17898fa483705468cc3c8dacaad1c4
     m_Address: "Assets/Game/Common/Commend/Audios/\u5A01\u98A8\u5802\u3005.mp3"
     m_ReadOnly: 0
@@ -90,51 +93,61 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Yamanote
   - m_GUID: cce40b9f3e171be41ba791a4d765eee4
     m_Address: Assets/Game/Yamanote/Audios/bgm_yamanote.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Yamanote
   - m_GUID: 3c9a5f197d536d94894bc7d4a5729a6f
     m_Address: Assets/Game/Yamanote/Audios/sfx_yamanote_wind.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Yamanote
   - m_GUID: 0110c2c7fa6065c4db9d7b787a7dd7ed
     m_Address: Assets/Game/Yamanote/Audios/sfx_yamanote_change_question.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Yamanote
   - m_GUID: da4746a8fba2ded4eb540ff6ac95de0a
     m_Address: Assets/Game/Yamanote/Audios/sfx_yamanote_game_over.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Yamanote
   - m_GUID: b7b3c988a401ba042b5e166cf27b1e54
     m_Address: Assets/Game/Yamanote/Audios/sfx_yamanote_rain.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Yamanote
   - m_GUID: 969a7cd5a8814c14b94912510832bc65
     m_Address: Assets/Game/Yamanote/Audios/sfx_yamanote_changing_question.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Yamanote
   - m_GUID: 68069ff0174fa684c92a82d21394e0a5
     m_Address: Assets/Game/Yamanote/Audios/sfx_yamanote_thunder.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Yamanote
   - m_GUID: 6726e0bb223540a48ba756c779f7c35b
     m_Address: Assets/Game/Yamanote/Audios/sfx_yamanote_accelelation_start.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Yamanote
   - m_GUID: 813089c6ac753a94f859f8418c4bcdb6
     m_Address: Assets/Game/Yamanote/Audios/bgm_yamanote_game_accelelation.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
+    - USEN.Games.Yamanote
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 19ecc521cb0da484a839d120332326fe, type: 2}
   m_SchemaSet:
