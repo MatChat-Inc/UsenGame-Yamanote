@@ -1,5 +1,6 @@
 // Created by LunarEclipse on 2024-6-21 1:53.
 
+using System;
 using System.Threading.Tasks;
 using DG.Tweening;
 using Luna;
@@ -8,8 +9,11 @@ using Luna.UI;
 using Luna.UI.Navigation;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 using UnityEngine.UI;
 using USEN.Games.Common;
+using Random = UnityEngine.Random;
 
 namespace USEN.Games.Yamanote
 {
@@ -20,6 +24,9 @@ namespace USEN.Games.Yamanote
         public Image trainImage;
         public BottomPanel bottomPanel;
         
+        public PlayableDirector director;
+        public TimelineAsset[] timelines;
+        
         private void Start()
         {
             SFXManager.Play(R.Audios.SfxYamanoteGameOver);
@@ -28,6 +35,8 @@ namespace USEN.Games.Yamanote
                 if (this != null)
                     SFXManager.PlayRepeatedly(R.Audios.SfxYamanoteWind, (3, 10));
             });
+
+            PlayLightningRepeatedly((5, 10));
             
             startButton.onClick.AddListener(OnStartButtonClicked);
             settingsButton.onClick.AddListener(OnSettingsButtonClicked);
@@ -53,6 +62,18 @@ namespace USEN.Games.Yamanote
             bottomPanel.onBlueButtonClicked -= OnBlueButtonClicked;
         }
 
+        private void OnDestroy()
+        {
+            SFXManager.StopAll();
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) ||
+                Input.GetButtonDown("Cancel")) 
+                OnExitButtonClicked();
+        }
+        
         private void OnRedButtonClicked()
         {
             // もう一度同じお題で遊ぶ
@@ -65,18 +86,6 @@ namespace USEN.Games.Yamanote
             // 次のお題
             var questionsView = Navigator.BackTo<YamanoteQuestionsView>();
             questionsView.PlayRandomQuestion();
-        }
-
-        private void OnDestroy()
-        {
-            SFXManager.StopAll();
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape) ||
-                Input.GetButtonDown("Cancel")) 
-                OnExitButtonClicked();
         }
 
         private void OnExitButtonClicked()
@@ -92,6 +101,18 @@ namespace USEN.Games.Yamanote
         public void OnSettingsButtonClicked()
         {
             Navigator.Push<YamanoteSettingsView>();
+        }
+        
+        public async void PlayLightningRepeatedly((float min, float max) interval)
+        {
+            var i = 0;
+            while (this != null)
+            {
+                var delay = UnityEngine.Random.Range(interval.min, interval.max);
+                var timeline = timelines[i++.Mod(2)];
+                director.Play(timeline);
+                await Task.Delay(TimeSpan.FromSeconds(delay));
+            }
         }
     }
 }
