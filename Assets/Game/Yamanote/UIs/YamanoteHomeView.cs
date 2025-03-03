@@ -53,8 +53,9 @@ namespace USEN.Games.Yamanote
             // R.Audios.BgmYamanote.Load().Then(BgmManager.Play);
             R.Audios.BgmYamanote.Load().Then(clip => {
                 BgmManager.Play(clip);
-                Assets.Load(GetType().Namespace, "Audio");
                 Assets.Load("USEN.Games.Common", "Audio");
+                Assets.Load("USEN.Games.Roulette", "Audio");
+                Assets.Load(GetType().Namespace, "Audio");
             });
         }
 
