@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Luna;
 using Luna.Extensions;
@@ -38,7 +39,7 @@ namespace USEN.Games.Yamanote
             EventSystem.current.SetSelectedGameObject(startButton.gameObject);
         }
 
-        private void Start()
+        private async void Start()
         {
             // Load data
             _dao = YamanoteDAO.Instance;
@@ -49,14 +50,24 @@ namespace USEN.Games.Yamanote
             BgmManager.Volume = RoulettePreferences.BgmVolume;
             SFXManager.Volume = RoulettePreferences.SfxVolume;
             
+            // Show loading indicator before necessary assets are loaded
+            await UniTask.Yield(PlayerLoopTiming.PreLateUpdate);
+            Navigator.ShowModal<RoundedCircularLoadingIndicator>();
+            
             // Load audios
             // R.Audios.BgmYamanote.Load().Then(BgmManager.Play);
-            R.Audios.BgmYamanote.Load().Then(clip => {
-                BgmManager.Play(clip);
-                Assets.Load("USEN.Games.Common", "Audio");
-                Assets.Load("USEN.Games.Roulette", "Audio");
-                Assets.Load(GetType().Namespace, "Audio");
-            });
+            var clip = await R.Audios.BgmYamanote.Load();
+            BgmManager.Play(clip);
+            
+            // Load audios
+            await Assets.Load("USEN.Games.Common", "Audio");
+            await Assets.Load("USEN.Games.Roulette", "Audio");
+            await Assets.Load(GetType().Namespace, "Audio");
+
+            // Extra delay
+            await UniTask.Delay(5000);
+            
+            Navigator.PopToRoot();
         }
 
         private void OnEnable()

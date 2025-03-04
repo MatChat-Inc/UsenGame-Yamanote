@@ -238,6 +238,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 13cca7c6239014d9f8c62fc2a7f9240f, type: 3}
+    - target: {fileID: 2216862041794747132, guid: e67841950b12f1f49b6879df5fb194a5, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3124948727607416447, guid: e67841950b12f1f49b6879df5fb194a5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
