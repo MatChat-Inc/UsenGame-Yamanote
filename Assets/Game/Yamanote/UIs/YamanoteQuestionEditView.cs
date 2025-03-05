@@ -1,13 +1,8 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using Cysharp.Threading.Tasks;
 using Luna.UI;
 using Luna.UI.Navigation;
-using Modules.UI.Misc;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using USEN.Games.Common;
 
@@ -38,16 +33,21 @@ namespace USEN.Games.Yamanote
         {
             // saveAndPlayButton.onClick.AddListener(OnSaveAndPlayButtonClicked);
             // saveButton.onClick.AddListener(OnSaveButtonClicked);
+            
             bottomPanel.onBlueButtonClicked += OnSaveAndPlayButtonClicked;
             bottomPanel.onRedButtonClicked += OnSaveButtonClicked;
             if (!string.IsNullOrEmpty(Question?.Content)) {
                 inputField.onFocusSelectAll = true;
             }
+            
+            inputField.onValueChanged.AddListener(CheckText);
             // inputField.onSubmit.AddListener(async (value) => {
             //     await UniTask.NextFrame();
             //     saveAndPlayButton.Select();
             // });
             inputField.Select();
+            
+            CheckText(Question?.Content);
         }
 
         private void OnSaveAndPlayButtonClicked()
@@ -106,6 +106,20 @@ namespace USEN.Games.Yamanote
             } else {
                 _question.Content = inputField.text;
                 YamanoteDAO.Instance.UpdateQuestion(_question);
+            }
+        }
+        
+        private void CheckText(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                bottomPanel.blueButton.gameObject.SetActive(false);
+                bottomPanel.redButton.gameObject.SetActive(false);
+            }
+            else
+            {
+                bottomPanel.blueButton.gameObject.SetActive(true);
+                bottomPanel.redButton.gameObject.SetActive(true);
             }
         }
     }

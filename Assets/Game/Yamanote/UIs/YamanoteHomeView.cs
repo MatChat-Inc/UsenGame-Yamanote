@@ -64,9 +64,6 @@ namespace USEN.Games.Yamanote
             await Assets.Load("USEN.Games.Roulette", "Audio");
             await Assets.Load(GetType().Namespace, "Audio");
 
-            // Extra delay
-            await UniTask.Delay(5000);
-            
             Navigator.PopToRoot();
         }
 

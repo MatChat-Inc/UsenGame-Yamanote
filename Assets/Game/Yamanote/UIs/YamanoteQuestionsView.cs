@@ -90,7 +90,7 @@ namespace USEN.Games.Yamanote
                 // view.Question = newQuestion;
             }) as (YamanoteQuestion question, bool shouldPlay)?;
             
-            if (result == null || string.IsNullOrEmpty(result.Value.question.Content)) return;
+            if (result == null || string.IsNullOrEmpty(result.Value.question?.Content)) return;
 
             var question = result.Value.question;
             Category.Questions.Add(question);
