@@ -74,7 +74,7 @@ namespace USEN.Games.Yamanote
             if (this == null)
                 return;
             
-            if (YamanotePreferences.DisplayMode == YamanoteDisplayMode.Random)
+            if (YamanotePreferences.DisplayMode == YamanoteDisplayMode.Random && category.Questions.Count > 0)
             {
                 // Play random game
                 if (category != null)
