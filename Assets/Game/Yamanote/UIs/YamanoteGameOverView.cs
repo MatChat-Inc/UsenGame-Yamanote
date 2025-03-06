@@ -2,6 +2,7 @@
 
 using System;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Luna;
 using Luna.Extensions;
@@ -77,15 +78,16 @@ namespace USEN.Games.Yamanote
         private void OnRedButtonClicked()
         {
             // もう一度同じお題で遊ぶ
-            var questionsView = Navigator.BackTo<YamanoteQuestionsView>();
-            questionsView.PlaySelectedQuestion();
+            var questionsView = Navigator.BackTo<YamanoteGameView>();
+            questionsView.ResetGame(resetQuestion: false);
         }
 
-        private void OnBlueButtonClicked()
+        private async void OnBlueButtonClicked()
         {            
             // 次のお題
-            var questionsView = Navigator.BackTo<YamanoteQuestionsView>();
-            questionsView.PlayRandomQuestion();
+            var gameView = Navigator.BackTo<YamanoteGameView>();
+            await UniTask.NextFrame();
+            gameView.PickNextQuestion();
         }
 
         private void OnExitButtonClicked()

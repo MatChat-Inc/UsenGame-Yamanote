@@ -98,6 +98,11 @@ namespace USEN.Games.Yamanote
                 Accelerate();
             }
             
+            if (Input.GetKeyDown(KeyCode.Alpha0))
+            {
+                StopRain();
+            }
+            
             if (CheckAcceleration())
             {
                 Accelerate();
@@ -124,6 +129,7 @@ namespace USEN.Games.Yamanote
         {
             SFXManager.StopAll();
             BgmManager.Pause();
+            
             pickingQuestionsAutomatically = false;
             
             bottomPanel.onExitButtonClicked -= OnExitButtonClicked;
@@ -144,23 +150,7 @@ namespace USEN.Games.Yamanote
 
         public async void OnStartButtonClicked()
         {
-            _startTime = Time.time;
-            
-            startButton.gameObject.SetActive(false);
-            questionsView.gameObject.SetActive(true);
-            bottomPanel.confirmButton.gameObject.SetActive(false);
-            
-            BgmManager.Play(R.Audios.BgmYamanoteGame);
-            SFXManager.Play(R.Audios.SfxConfirm);
-            
-            await PlayStartupAnimation(0.5f);
-            
-            await UniTask.Delay(TimeSpan.FromSeconds(0.75f));
-
-            // StartPickingQuestionsAutomatically();
-            
-            // await PickNextRandomQuestion();
-            ShowControlButtons();
+            StartGame();
         } 
         
         private void OnExitButtonClicked()
@@ -173,44 +163,19 @@ namespace USEN.Games.Yamanote
             
         }
 
-        private void OnRedButtonClicked()
+        private async void OnRedButtonClicked()
         {
+            _accelerationDirector.time = 0;
+            _accelerationDirector.Stop();
+            
             BgmManager.Stop();
-            Navigator.Push<YamanoteGameOverView>();
+            await Navigator.Push<YamanoteGameOverView>();
+            BgmManager.Play(R.Audios.BgmYamanoteGame);
         }
 
-        private async void OnBlueButtonClicked()
+        private void OnBlueButtonClicked()
         {
-            if (_isPicking) return;
-            
-            _startTime = Time.time;
-            
-            // ++_counter;
-            // if (CheckAcceleration())
-            // {
-            //     Accelerate();
-            //     await UniTask.Delay(TimeSpan.FromSeconds(3));
-            // }
-
-            if (_isAccelerating)
-            {
-                Decelerate();
-                await UniTask.Delay(TimeSpan.FromSeconds(0.5));
-            }
-            
-            // Play sound effects
-            SFXManager.Play(R.Audios.SfxYamanoteChangingQuestion);
-            
-            // Pick next question
-            _isPicking = true;
-            pickingQuestionsAutomatically = false;
-            await PickNextRandomQuestion();
-            SFXManager.Play(R.Audios.SfxYamanoteChangeQuestion);
-            if (!_isAccelerating)
-                PlayNewQuestionAnimation();
-            await UniTask.Delay(TimeSpan.FromSeconds(3));
-            pickingQuestionsAutomatically = _shouldPickingQuestionsAutomatically;
-            _isPicking = false;
+            PickNextQuestion();
         }
         
         private async void OnGreenButtonClicked()
@@ -240,12 +205,98 @@ namespace USEN.Games.Yamanote
             BgmManager.Resume();
         }
         
+        public async void StartGame()
+        {
+            _startTime = Time.time;
+            
+            startButton.gameObject.SetActive(false);
+            questionsView.gameObject.SetActive(true);
+            bottomPanel.confirmButton.gameObject.SetActive(false);
+            
+            BgmManager.Play(R.Audios.BgmYamanoteGame);
+            SFXManager.Play(R.Audios.SfxConfirm);
+            
+            await PlayStartupAnimation(0.5f);
+            
+            await UniTask.Delay(TimeSpan.FromSeconds(0.75f));
+
+            // StartPickingQuestionsAutomatically();
+            
+            // await PickNextRandomQuestion();
+            ShowControlButtons();
+        } 
+        
+        public void ResetGame(bool resetQuestion = true)
+        {
+            _startTime = Time.time;
+            _isPicking = false;
+            _isAccelerating = false;
+            _loopFlag = true;
+            
+            if (resetQuestion)
+                questionsPicker.ScrollTo(0, 0);
+            questionsPicker.Alpha = 0;
+            questionsView.alpha = 0;
+            accelerationGroup.alpha = 0;
+            questionsView.gameObject.SetActive(false);
+            startButton.gameObject.SetActive(true);
+            bottomPanel.confirmButton.gameObject.SetActive(true);
+            bottomPanel.redButton.gameObject.SetActive(false);
+            bottomPanel.blueButton.gameObject.SetActive(false);
+            bottomPanel.greenButton.gameObject.SetActive(false);
+            bottomPanel.yellowButton.gameObject.SetActive(false);
+            cloudController.speed = new Vector2(-0.05f, 0f);
+            buildingsController.speed = new Vector2(-0.5f, 0f);
+
+            StopRain();
+        }
+
         public async Task PickNextQuestion()
+        {
+            if (_isPicking) return;
+            
+            bottomPanel.redButton.gameObject.SetActive(false);
+            bottomPanel.blueButton.gameObject.SetActive(false);
+            
+            _startTime = Time.time;
+            
+            // ++_counter;
+            // if (CheckAcceleration())
+            // {
+            //     Accelerate();
+            //     await UniTask.Delay(TimeSpan.FromSeconds(3));
+            // }
+
+            if (_isAccelerating)
+            {
+                Decelerate();
+                await UniTask.Delay(TimeSpan.FromSeconds(0.5));
+            }
+            
+            // Play sound effects
+            SFXManager.Play(R.Audios.SfxYamanoteChangingQuestion);
+            
+            // Pick next question
+            _isPicking = true;
+            pickingQuestionsAutomatically = false;
+            await ScrollToNextRandomQuestion();
+            SFXManager.Play(R.Audios.SfxYamanoteChangeQuestion);
+            if (!_isAccelerating)
+                PlayNewQuestionAnimation();
+            await UniTask.Delay(TimeSpan.FromSeconds(3));
+            pickingQuestionsAutomatically = _shouldPickingQuestionsAutomatically;
+            _isPicking = false;
+            
+            bottomPanel.redButton.gameObject.SetActive(true);
+            bottomPanel.blueButton.gameObject.SetActive(true);
+        }
+        
+        public async Task ScrollToNextQuestion()
         {
             await questionsPicker.ScrollTo(questionsPicker.FirstVisibleIndex + 1, 2);
         }
         
-        public async Task PickNextRandomQuestion()
+        public async Task ScrollToNextRandomQuestion()
         {
             var questionsCount = _questions.Count;
             var randomIndex = UnityEngine.Random.Range(0, questionsCount);
@@ -391,6 +442,8 @@ namespace USEN.Games.Yamanote
         
         private void Accelerate()
         {
+            if (_isAccelerating) return;
+            
             // Config
             _isAccelerating = true;
             questionInterval = 5;
@@ -424,6 +477,8 @@ namespace USEN.Games.Yamanote
         
         private void Decelerate()
         {
+            if (!_isAccelerating) return;
+            
             // Config
             _isAccelerating = false;
             questionInterval = 8;
@@ -448,6 +503,16 @@ namespace USEN.Games.Yamanote
             });
             
             BgmManager.Play(R.Audios.BgmYamanoteGame);
+        }
+        
+        private async void StopRain()
+        {
+            _accelerationDirector.time = 0;
+            rainParticles.Stop();
+            if (_accelerationDirector.state != PlayState.Playing)
+                _accelerationDirector.Play();
+            await UniTask.Yield(PlayerLoopTiming.PostLateUpdate);
+            _accelerationDirector.Stop();
         }
     }
 }
