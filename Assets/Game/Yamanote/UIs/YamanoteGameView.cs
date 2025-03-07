@@ -50,6 +50,7 @@ namespace USEN.Games.Yamanote
         private bool _loopFlag = true;
 
         private float _startTime = float.MaxValue;
+        private float _pauseTime;
         
         // private int _counter = 0;
         
@@ -113,6 +114,8 @@ namespace USEN.Games.Yamanote
         {
             BgmManager.Resume();
             
+            _startTime += Time.time - _pauseTime;
+            
             if (_shouldPickingQuestionsAutomatically)
                 pickingQuestionsAutomatically = true;
             
@@ -129,6 +132,8 @@ namespace USEN.Games.Yamanote
         {
             SFXManager.StopAll();
             BgmManager.Pause();
+            
+            _pauseTime = Time.time;
             
             pickingQuestionsAutomatically = false;
             
