@@ -399,7 +399,7 @@ MonoBehaviour:
   m_fontSize: 72
   m_fontSizeBase: 72
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -10327,6 +10327,7 @@ GameObject:
   - component: {fileID: 2763748390864724046}
   - component: {fileID: 5679294098697829496}
   - component: {fileID: 8894512888189086041}
+  - component: {fileID: 797640203917130089}
   m_Layer: 0
   m_Name: Questions List
   m_TagString: Untagged
@@ -10488,6 +10489,23 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
+--- !u!114 &797640203917130089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5073209910307215974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &5230411952067542942
 GameObject:
   m_ObjectHideFlags: 0
@@ -11266,6 +11284,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   outerGlow: {fileID: 1329684958396298882}
+  animated: 0
   outglowDuration: 0.2
   outglowOnNormal: 0
   outglowOnHovered: 1
@@ -11341,6 +11360,8 @@ GameObject:
   - component: {fileID: 8912814399946987516}
   - component: {fileID: 6646783387543606335}
   - component: {fileID: 8370462988123189327}
+  - component: {fileID: 9203203749771903030}
+  - component: {fileID: 1858076607525163583}
   m_Layer: 0
   m_Name: YamanoteGameView
   m_TagString: Untagged
@@ -11497,7 +11518,7 @@ Animator:
   m_GameObject: {fileID: 8120093124405365960}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6db82a5a6ad186b4cbe708e6effd099a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11526,6 +11547,44 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls: []
+--- !u!223 &9203203749771903030
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8120093124405365960}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &1858076607525163583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8120093124405365960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 55
 --- !u!1 &8150408810397414518
 GameObject:
   m_ObjectHideFlags: 0
