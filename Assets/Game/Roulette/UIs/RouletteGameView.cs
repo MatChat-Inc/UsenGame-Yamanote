@@ -163,7 +163,8 @@ namespace USEN.Games.Roulette
         {
             SFXManager.Stop(R.Audios.SfxConfirm);
             SFXManager.Stop(R.Audios.SfxRouletteGameRotating);
-            Navigator.PopUntil<RouletteCategoryView>();
+            Navigator.PopUntil<RouletteGameSelectionView>();
+            Navigator.PushReplacement<RouletteCategoryView>();
         }
 
         private async void OnYellowButtonClicked()
