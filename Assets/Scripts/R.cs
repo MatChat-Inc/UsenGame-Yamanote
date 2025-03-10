@@ -26,8 +26,8 @@ namespace R
         public static Asset<AudioClip> SfxRouletteGameRotating => new("Assets/Game/Roulette/Audios/sfx_roulette_game_rotating.mp3");
         public static Asset<AudioClip> BgmYamanote => new("Assets/Game/Yamanote/Audios/bgm_yamanote.mp3");
         public static Asset<AudioClip> BgmYamanoteGame => new("Assets/Game/Yamanote/Audios/bgm_yamanote_game.mp3");
-        public static Asset<AudioClip> BgmYamanoteGameAccelelation => new("Assets/Game/Yamanote/Audios/bgm_yamanote_game_accelelation.mp3");
-        public static Asset<AudioClip> SfxYamanoteAccelelationStart => new("Assets/Game/Yamanote/Audios/sfx_yamanote_accelelation_start.mp3");
+        public static Asset<AudioClip> BgmYamanoteGameAcceleration => new("Assets/Game/Yamanote/Audios/bgm_yamanote_game_acceleration.mp3");
+        public static Asset<AudioClip> SfxYamanoteAccelerationStart => new("Assets/Game/Yamanote/Audios/sfx_yamanote_acceleration_start.mp3");
         public static Asset<AudioClip> SfxYamanoteChangeQuestion => new("Assets/Game/Yamanote/Audios/sfx_yamanote_change_question.mp3");
         public static Asset<AudioClip> SfxYamanoteChangingQuestion => new("Assets/Game/Yamanote/Audios/sfx_yamanote_changing_question.mp3");
         public static Asset<AudioClip> SfxYamanoteGameOver => new("Assets/Game/Yamanote/Audios/sfx_yamanote_game_over.mp3");

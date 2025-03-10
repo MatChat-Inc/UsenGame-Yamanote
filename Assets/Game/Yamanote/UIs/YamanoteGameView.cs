@@ -445,7 +445,7 @@ namespace USEN.Games.Yamanote
             return false;
         }
         
-        private void Accelerate()
+        private async void Accelerate()
         {
             if (_isAccelerating) return;
             
@@ -477,7 +477,11 @@ namespace USEN.Games.Yamanote
                 ShowControlButtons();
             });
             
-            BgmManager.Play(R.Audios.BgmYamanoteGameAccelelation);
+            BgmManager.Stop();
+            SFXManager.Play(R.Audios.SfxYamanoteAccelerationStart);
+            await Task.Delay(TimeSpan.FromSeconds(1.6f));
+            if (this != null)
+                BgmManager.Play(R.Audios.BgmYamanoteGameAcceleration);
         }
         
         private void Decelerate()
