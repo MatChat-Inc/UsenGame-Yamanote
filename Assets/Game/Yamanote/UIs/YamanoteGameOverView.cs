@@ -14,6 +14,7 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 using USEN.Games.Common;
+using USEN.Games.Roulette;
 using Random = UnityEngine.Random;
 
 namespace USEN.Games.Yamanote
@@ -28,16 +29,12 @@ namespace USEN.Games.Yamanote
         public PlayableDirector director;
         public TimelineAsset[] timelines;
         
+        private bool _isPlayingAnimation = false;
+        
         private void Start()
         {
             SFXManager.Play(R.Audios.SfxYamanoteGameOver);
-            SFXManager.PlayRepeatedly(R.Audios.SfxYamanoteRain, (-6, -3));
-            Task.Delay(Random.Range(3000, 5000)).Then(_ => {
-                if (this != null)
-                    SFXManager.PlayRepeatedly(R.Audios.SfxYamanoteWind, (3, 10));
-            });
-
-            PlayLightningRepeatedly((5, 10));
+            PlaySfx();
             
             startButton.onClick.AddListener(OnStartButtonClicked);
             settingsButton.onClick.AddListener(OnSettingsButtonClicked);
@@ -52,6 +49,7 @@ namespace USEN.Games.Yamanote
             
             bottomPanel.onRedButtonClicked += OnRedButtonClicked;
             bottomPanel.onBlueButtonClicked += OnBlueButtonClicked;
+            bottomPanel.onGreenButtonClicked += OnGreenButtonClicked;
             
             // Train tween animation
             trainImage.transform.DOLocalMoveX(-5000, 1.5f).SetEase(Ease.OutSine);
@@ -61,6 +59,7 @@ namespace USEN.Games.Yamanote
         {
             bottomPanel.onRedButtonClicked -= OnRedButtonClicked;
             bottomPanel.onBlueButtonClicked -= OnBlueButtonClicked;
+            bottomPanel.onGreenButtonClicked -= OnGreenButtonClicked;
         }
 
         private void OnDestroy()
@@ -89,6 +88,29 @@ namespace USEN.Games.Yamanote
             await UniTask.NextFrame();
             gameView.PickNextQuestion();
         }
+        
+        private async void OnGreenButtonClicked()
+        {
+            SFXManager.StopAll();
+            
+            await Navigator.Push<RouletteGameSelectionView>((view) => {
+                view.Category = RouletteManager.Instance.GetCategory("バツゲーム");
+                // BgmManager.Resume();
+                R.Audios.BgmRouletteLoop.PlayAsBgm();
+                
+                if (RoulettePreferences.DisplayMode == RouletteDisplayMode.Random)
+                { 
+                    Navigator.Push<USEN.Games.Roulette.RouletteGameView>(async (view) => {
+                        view.RouletteData = RouletteManager.Instance.GetRandomRoulette();
+                    });
+                }
+            });
+            
+            BgmManager.Stop();
+            
+            await UniTask.NextFrame();
+            PlaySfx();
+        }
 
         private void OnExitButtonClicked()
         {
@@ -104,17 +126,32 @@ namespace USEN.Games.Yamanote
         {
             Navigator.Push<YamanoteSettingsView>();
         }
+
+        public void PlaySfx()
+        {
+            SFXManager.PlayRepeatedly(R.Audios.SfxYamanoteRain, (-6, -3));
+            Task.Delay(Random.Range(3000, 5000)).Then(_ => {
+                if (this != null && isActiveAndEnabled)
+                    SFXManager.PlayRepeatedly(R.Audios.SfxYamanoteWind, (3, 10));
+            });
+
+            if (!_isPlayingAnimation)
+                PlayLightningRepeatedly((5, 10));
+        }
         
         public async void PlayLightningRepeatedly((float min, float max) interval)
         {
             var i = 0;
-            while (this != null)
+
+            _isPlayingAnimation = true;
+            while (this != null && isActiveAndEnabled)
             {
                 var delay = UnityEngine.Random.Range(interval.min, interval.max);
                 var timeline = timelines[i++.Mod(2)];
                 director.Play(timeline);
                 await Task.Delay(TimeSpan.FromSeconds(delay));
             }
+            _isPlayingAnimation = false;
         }
     }
 }

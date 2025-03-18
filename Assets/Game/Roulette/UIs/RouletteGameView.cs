@@ -249,7 +249,7 @@ namespace USEN.Games.Roulette
                 builder: (popup) =>
                 {
                     popup.onOption1 = () => Navigator.Pop();
-                    popup.onOption2 = () => Navigator.PopUntil<YamanoteGameView>();
+                    popup.onOption2 = () => Navigator.PopUntil<YamanoteGameOverView>();
 #if UNITY_ANDROID
                     popup.onOption3 = () => Android.Back();
 #else

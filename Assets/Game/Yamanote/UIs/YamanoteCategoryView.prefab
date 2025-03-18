@@ -3855,7 +3855,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -4095,6 +4095,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8695382181811651837, guid: 80b6fbabfd348dc438dcf814d60e1294, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80b6fbabfd348dc438dcf814d60e1294, type: 3}
 --- !u!224 &783242148058197403 stripped
@@ -4263,6 +4267,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3467195953606923170, guid: 0c380f4697fab384e97d3c38dbb7f523, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517120674836412898, guid: 0c380f4697fab384e97d3c38dbb7f523, type: 3}
+      propertyPath: playSound
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4517120674836412898, guid: 0c380f4697fab384e97d3c38dbb7f523, type: 3}

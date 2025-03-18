@@ -248,7 +248,7 @@ namespace USEN.Games.Yamanote
             bottomPanel.confirmButton.gameObject.SetActive(true);
             bottomPanel.redButton.gameObject.SetActive(false);
             bottomPanel.blueButton.gameObject.SetActive(false);
-            bottomPanel.greenButton.gameObject.SetActive(false);
+            // bottomPanel.greenButton.gameObject.SetActive(false);
             bottomPanel.yellowButton.gameObject.SetActive(false);
             cloudController.speed = new Vector2(-0.05f, 0f);
             buildingsController.speed = new Vector2(-0.5f, 0f);
@@ -405,7 +405,7 @@ namespace USEN.Games.Yamanote
         {
             bottomPanel.blueButton.gameObject.SetActive(YamanotePreferences.DisplayMode != YamanoteDisplayMode.Normal);
             bottomPanel.redButton.gameObject.SetActive(true);
-            bottomPanel.greenButton.gameObject.SetActive(true);
+            // bottomPanel.greenButton.gameObject.SetActive(true);
             bottomPanel.yellowButton.gameObject.SetActive(true);
         }
         
@@ -413,7 +413,7 @@ namespace USEN.Games.Yamanote
         {
             bottomPanel.blueButton.gameObject.SetActive(false);
             bottomPanel.redButton.gameObject.SetActive(false);
-            bottomPanel.greenButton.gameObject.SetActive(false);
+            // bottomPanel.greenButton.gameObject.SetActive(false);
             bottomPanel.yellowButton.gameObject.SetActive(false);
         }
         
