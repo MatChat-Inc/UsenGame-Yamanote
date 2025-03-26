@@ -163,7 +163,14 @@ namespace USEN.Games.Roulette
         
         public async Task AddRoulette(RouletteData roulette)
         {
-            db.Insert(roulette);
+            try {
+                db.Insert(roulette);
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"[RouletteManager] Add failed: {e.Message}");
+            }
+
             IsDirty = true;
             var response = await API.AddRoulette(roulette);
             

@@ -68,6 +68,11 @@ namespace USEN.Games.Roulette
             }
         }
         
+        public void GenerateNewID()
+        {
+            ID = Guid.NewGuid().ToString();
+        }
+        
         public static Color GetSectorColor(int index, int count)
         {
             var color = Color.HSVToRGB(Mathf.Pow((1.0f / count * index - 0.02f).Mod(1), 1.35f), 1f, 1f);

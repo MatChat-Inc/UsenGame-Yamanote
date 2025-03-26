@@ -22,7 +22,7 @@ using Random = UnityEngine.Random;
 
 namespace USEN.Games.Roulette
 {
-    public class RouletteGameView : Widget
+    public partial class RouletteGameView : Widget
     {
         public RouletteWheel rouletteWheel;
         public Button startButton;
@@ -79,13 +79,13 @@ namespace USEN.Games.Roulette
             _originalPosition = rouletteWheel.transform.parent.localPosition;
             _originalScale = rouletteWheel.transform.parent.localScale;
             
-            AssetUtils.LoadAsync<CommendView>().ContinueWith(task =>
-            {
-                var go = task.Result;
-                var commendView = go.GetComponent<CommendView>();
-                if (commendView != null)
-                    _audioClipHandle = commendView.PreloadAudio();
-            }, TaskScheduler.FromCurrentSynchronizationContext());
+            // AssetUtils.LoadAsync<CommendView>().ContinueWith(task =>
+            // {
+            //     var go = task.Result;
+            //     var commendView = go.GetComponent<CommendView>();
+            //     if (commendView != null)
+            //         _audioClipHandle = commendView.PreloadAudio();
+            // }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
         private void Update()
@@ -101,9 +101,9 @@ namespace USEN.Games.Roulette
         {
             SFXManager.StopAll();
             
-            AssetUtils.Unload<CommendView>();
-            if (_audioClipHandle != null)
-                Addressables.Release(_audioClipHandle.Value);
+            // AssetUtils.Unload<CommendView>();
+            // if (_audioClipHandle != null)
+            //     Addressables.Release(_audioClipHandle.Value);
         }
 
         private KeyEventResult OnKeyEvent(KeyControl key, KeyEvent @event)
@@ -192,7 +192,7 @@ namespace USEN.Games.Roulette
             bottomPanel.confirmButton.gameObject.SetActive(true);
             bottomPanel.yellowButton.gameObject.SetActive(true);
             bottomPanel.blueButton.gameObject.SetActive(true);
-            // bottomPanel.redButton.gameObject.SetActive(true);
+            bottomPanel.redButton.gameObject.SetActive(true);
             
             _isStopping = false;
         }
@@ -241,21 +241,6 @@ namespace USEN.Games.Roulette
             SFXManager.Play(R.Audios.SfxRouletteGameDecelerating);
             
             bottomPanel.confirmButton.gameObject.SetActive(false);
-        }
-
-        private void PopupConfirmView()
-        {
-            Navigator.ShowModal<PopupOptionsView2>(
-                builder: (popup) =>
-                {
-                    popup.onOption1 = () => Navigator.Pop();
-                    popup.onOption2 = () => Navigator.PopUntil<YamanoteGameOverView>();
-#if UNITY_ANDROID
-                    popup.onOption3 = () => Android.Back();
-#else
-                    popup.onOption3 = () => Application.Quit();
-#endif
-                });
         }
         
         private void ResetRoulette()

@@ -81,6 +81,7 @@ namespace USEN.Games.Roulette
                 await UniTask.NextFrame();
                 Navigator.Push<RouletteGameView>(async (view) =>
                 {
+                    Navigator.Instance.PreviousRoute.LastSelected = null;
                     await UniTask.NextFrame();
                     view.RouletteData = Data;
                 });
