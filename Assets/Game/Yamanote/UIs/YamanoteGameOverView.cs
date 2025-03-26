@@ -84,9 +84,18 @@ namespace USEN.Games.Yamanote
         private async void OnBlueButtonClicked()
         {            
             // 次のお題
-            var gameView = Navigator.BackTo<YamanoteGameView>();
-            await UniTask.NextFrame();
-            gameView.PickNextQuestion();
+            switch (YamanotePreferences.DisplayMode)
+            {
+                case YamanoteDisplayMode.Normal:
+                    Navigator.PopUntil<YamanoteCategoryView>();
+                    break;
+                case YamanoteDisplayMode.Random:
+                    var gameView = Navigator.BackTo<YamanoteGameView>();
+                    await UniTask.NextFrame();
+                    gameView.PickNextQuestion();
+                    break;
+            }
+
         }
         
         private async void OnGreenButtonClicked()
