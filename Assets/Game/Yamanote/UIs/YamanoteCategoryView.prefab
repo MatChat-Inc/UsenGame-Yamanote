@@ -3971,6 +3971,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2866257368203343538, guid: 80b6fbabfd348dc438dcf814d60e1294, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 3248433112587204535, guid: 80b6fbabfd348dc438dcf814d60e1294, type: 3}
       propertyPath: m_Name
       value: YamanoteCategoryList

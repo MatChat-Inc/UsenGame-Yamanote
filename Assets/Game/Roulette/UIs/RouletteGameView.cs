@@ -17,7 +17,6 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using USEN.Games.Common;
-using USEN.Games.Yamanote;
 using Random = UnityEngine.Random;
 
 namespace USEN.Games.Roulette
@@ -86,6 +85,10 @@ namespace USEN.Games.Roulette
             //     if (commendView != null)
             //         _audioClipHandle = commendView.PreloadAudio();
             // }, TaskScheduler.FromCurrentSynchronizationContext());
+            
+#if !USEN_ROULETTE
+            bottomPanel.redButton.gameObject.SetActive(false);
+#endif
         }
 
         private void Update()
@@ -146,7 +149,7 @@ namespace USEN.Games.Roulette
             switch (RoulettePreferences.DisplayMode)
             {
                 case RouletteDisplayMode.Normal:
-                    Navigator.Pop();
+                    Navigator.Pop(RouletteData);
                     break;
                 case RouletteDisplayMode.Random:
                     ResetRoulette();
@@ -163,8 +166,7 @@ namespace USEN.Games.Roulette
         {
             SFXManager.Stop(R.Audios.SfxConfirm);
             SFXManager.Stop(R.Audios.SfxRouletteGameRotating);
-            Navigator.PopUntil<RouletteGameSelectionView>();
-            Navigator.PushReplacement<RouletteCategoryView>();
+            Navigator.PopUntil<RouletteCategoryView, RouletteData>(RouletteData);
         }
 
         private async void OnYellowButtonClicked()
@@ -181,7 +183,9 @@ namespace USEN.Games.Roulette
             // Hide bottom buttons
             bottomPanel.yellowButton.gameObject.SetActive(false);
             bottomPanel.blueButton.gameObject.SetActive(false);
+#if USEN_ROULETTE
             bottomPanel.redButton.gameObject.SetActive(false);
+#endif
         }
         
         private void OnSpinEnd(string obj)
@@ -192,7 +196,9 @@ namespace USEN.Games.Roulette
             bottomPanel.confirmButton.gameObject.SetActive(true);
             bottomPanel.yellowButton.gameObject.SetActive(true);
             bottomPanel.blueButton.gameObject.SetActive(true);
-            bottomPanel.redButton.gameObject.SetActive(true);
+#if USEN_ROULETTE
+            bottomPanel.redButton.gameObject.SetActive(true);      
+#endif
             
             _isStopping = false;
         }
@@ -242,6 +248,27 @@ namespace USEN.Games.Roulette
             
             bottomPanel.confirmButton.gameObject.SetActive(false);
         }
+        
+#if USEN_ROULETTE
+        private void PopupConfirmView()
+        {
+            Navigator.ShowModal<PopupOptionsView>(
+                builder: (popup) =>
+                {
+                    popup.onOption1 = () => Navigator.Pop(RouletteData);
+                    popup.onOption2 = () =>
+                    {
+                        SFXManager.Stop();
+                        Navigator.PopUntil<RouletteStartView, RouletteData>(RouletteData);
+                    }; 
+#if UNITY_ANDROID
+                    popup.onOption3 = () => Android.Back();
+#else
+                    popup.onOption3 = () => Application.Quit();
+#endif
+                });
+        }
+#endif
         
         private void ResetRoulette()
         {

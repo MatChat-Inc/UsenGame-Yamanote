@@ -229,6 +229,11 @@ namespace USEN.Games.Roulette
             IsDirty = true;
         }
         
+        public bool ExistsRoulette(RouletteData roulette)
+        {
+            return db.Table<RouletteData>().Any(r => r.ID == roulette.ID);
+        }
+        
         private void UpdateTable()
         {
             var tableName = db.GetMapping<RouletteData>().TableName;

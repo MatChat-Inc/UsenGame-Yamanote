@@ -12,8 +12,8 @@ namespace USEN.Games.Roulette
             Navigator.ShowModal<PopupOptionsView2>(
                 builder: (popup) =>
                 {
-                    popup.onOption1 = () => Navigator.Pop();
-                    popup.onOption2 = () => Navigator.PopUntil<YamanoteGameOverView>();
+                    popup.onOption1 = () => Navigator.Pop(RouletteData);
+                    popup.onOption2 = () => Navigator.PopUntil<YamanoteGameOverView, RouletteData>(RouletteData);
 #if UNITY_ANDROID
                     popup.onOption3 = () => Android.Back();
 #else

@@ -1,9 +1,7 @@
 // Created by LunarEclipse on 2024-7-11 23:55.
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using Luna;
 using Luna.UI;
@@ -13,7 +11,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using USEN.Games.Common;
 using Random = UnityEngine.Random;
@@ -31,7 +28,7 @@ namespace USEN.Games.Roulette
         public BottomPanel bottomPanel;
         
         private RouletteData _data;
-
+        
         private bool _isEditing = false;
         private bool IsEditing => EventSystem.current.currentSelectedGameObject?.GetComponent<TMP_InputField>()?.isFocused ?? false;
         
@@ -41,6 +38,7 @@ namespace USEN.Games.Roulette
             set
             {
                 _data = new RouletteData(value);
+                _data.Category = "オリジナル";
                 
                 if (title.text == "")
                 {
@@ -53,18 +51,17 @@ namespace USEN.Games.Roulette
                 sectorCounter.text = $"{value.sectors.Count}";
             }
         }
+        
+        public bool ShouldCreateNew { get; set; } = false;
 
         protected void Awake()
         {
-            gameTitle.onValueChanged.AddListener((value) =>
-            {
+            gameTitle.onValueChanged.AddListener((value) => {
                 Data.Title = value;
             });
             
-            sectorListView.onCellCreated += (index, cell) =>
-            {
-                cell.onInputValueChanged += (i, cell, value) =>
-                {
+            sectorListView.onCellCreated += (index, cell) => {
+                cell.onInputValueChanged += (i, cell, value) => {
                     Data.sectors[i].content = value;
                 };
             };
@@ -75,34 +72,25 @@ namespace USEN.Games.Roulette
             //     cell.inputField.Select();
             // };
             
-            bottomPanel.onBlueButtonClicked += async () =>
+            bottomPanel.onBlueButtonClicked += OnBlueButtonClicked;
+            bottomPanel.onRedButtonClicked += OnRedButtonClicked;
+            bottomPanel.onYellowButtonClicked += OnYellowButtonClicked; // Delete the selected sector when the yellow button is clicked
+        }
+
+        private async void Start()
+        {
+            if (Data == null) ShouldCreateNew = true;
+            if (ShouldCreateNew)
             {
-                Navigator.Pop(Data);
-                await UniTask.NextFrame();
-                Navigator.Push<RouletteGameView>(async (view) =>
-                {
-                    Navigator.Instance.PreviousRoute.LastSelected = null;
-                    await UniTask.NextFrame();
-                    view.RouletteData = Data;
-                });
-            };
+                if (Data == null)
+                    Data = CreateNewRoulette();
+                else Data.GenerateNewID();
+            }
             
-            bottomPanel.onRedButtonClicked += () =>
-            {
-                Navigator.Pop(Data);
-                // RouletteManager.Instance.Sync();
-            };
+            SetNavigation();
             
-            // Delete the selected sector when the yellow button is clicked
-            bottomPanel.onYellowButtonClicked += () =>
-            {
-                if (sectorListView.Selected)
-                {
-                    // Data.sectors.RemoveAt(sectorListView.SelectedIndex);
-                    sectorListView.Remove(sectorListView.SelectedIndex);
-                    sectorCounter.text = $"{sectorListView.Count}";
-                }
-            };
+            await UniTask.DelayFrame(1);
+            gameTitle.DeactivateInputField();
         }
 
         private void OnEnable()
@@ -114,14 +102,6 @@ namespace USEN.Games.Roulette
         private void OnDisable()
         {
             base.OnKey -= OnKeyEvent;
-        }
-
-        private async void Start()
-        {
-            SetNavigation();
-            
-            await UniTask.DelayFrame(1);
-            gameTitle.DeactivateInputField();
         }
         
         private void Update()
@@ -169,6 +149,35 @@ namespace USEN.Games.Roulette
             }
             
             return KeyEventResult.Unhandled;
+        }
+        
+        private async void OnBlueButtonClicked()
+        {
+            SaveChanges();
+            
+            Navigator.PushReplacement<RouletteGameView>(async (view) =>
+            {
+                Navigator.Instance.PreviousRoute.LastSelected = null;
+                await UniTask.NextFrame();
+                view.RouletteData = Data;
+            });
+        }
+        
+        private void OnRedButtonClicked()
+        {
+            SaveChanges();
+            
+            Navigator.Pop(Data);
+        }
+        
+        private void OnYellowButtonClicked()
+        {
+            if (sectorListView.Selected)
+            {
+                // Data.sectors.RemoveAt(sectorListView.SelectedIndex);
+                sectorListView.Remove(sectorListView.SelectedIndex);
+                sectorCounter.text = $"{sectorListView.Count}";
+            }
         }
 
         public async void AddSector()
@@ -227,6 +236,38 @@ namespace USEN.Games.Roulette
         private Color RandomColor(float saturation = 1, float brightness = 1)
         {
             return Color.HSVToRGB(Random.value, saturation, brightness);
+        }
+
+        private RouletteData CreateNewRoulette()
+        {
+            var roulette = new RouletteData();
+            roulette.Title = "新規ルーレット";
+            roulette.Category = "オリジナル";
+            roulette.sectors = new List<RouletteSector>();
+            for (int i = 0; i < 8; i++)
+            {
+                roulette.sectors.Add(new RouletteSector()
+                {
+                    content = $"",
+                    weight = 1,
+                    color = RouletteData.GetSectorColor(i, 8)
+                });
+            }
+            return roulette;
+        }
+
+        private void SaveChanges()
+        {
+            var rm = RouletteManager.Instance;
+            if (rm == null) return;
+                
+            if (ShouldCreateNew)
+            {
+                if (!rm.ExistsRoulette(Data))
+                    rm.AddRoulette(Data);
+                else Debug.LogWarning($"[RouletteEditView] Roulette already exists: {Data.Title}");
+            }
+            else rm.UpdateRoulette(Data);
         }
     }
 }
