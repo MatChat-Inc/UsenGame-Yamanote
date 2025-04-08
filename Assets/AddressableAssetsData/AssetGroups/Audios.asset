@@ -137,13 +137,13 @@ MonoBehaviour:
     - Audio
     - USEN.Games.Yamanote
   - m_GUID: 6726e0bb223540a48ba756c779f7c35b
-    m_Address: Assets/Game/Yamanote/Audios/sfx_yamanote_accelelation_start.mp3
+    m_Address: Assets/Game/Yamanote/Audios/sfx_yamanote_acceleration_start.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio
     - USEN.Games.Yamanote
-  - m_GUID: 813089c6ac753a94f859f8418c4bcdb6
-    m_Address: Assets/Game/Yamanote/Audios/bgm_yamanote_game_accelelation.mp3
+  - m_GUID: d9530677bbb91f3458a991c301e526bb
+    m_Address: Assets/Game/Yamanote/Audios/bgm_yamanote_game_acceleration.mp3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Audio

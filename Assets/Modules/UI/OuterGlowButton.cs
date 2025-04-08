@@ -5,12 +5,15 @@ using LeTai;
 using LeTai.TrueShadow;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(TrueShadow))]
 public class OuterGlowButton : Button
 {
     public TrueShadow outerGlow;
+    
+    public bool animated = true;
     public float outglowDuration = 0.2f;
     public bool outglowOnNormal = false;
     public bool outglowOnHovered = true;
@@ -68,12 +71,12 @@ public class OuterGlowButton : Button
             
     }
     
-    private void SetGlowState(bool glow, bool animated = true)
+    private void SetGlowState(bool glow)
     {
         if (glow == _isGlowing) return;
         
-        if (glow) Glow();
-        else StopGlow();
+        if (glow) Glow(animated);
+        else StopGlow(animated);
     }
     
     private void Glow(bool animated = true)

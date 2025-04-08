@@ -598,6 +598,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   outerGlow: {fileID: 8219426307102502888}
+  animated: 1
   outglowDuration: 0.2
   outglowOnNormal: 0
   outglowOnHovered: 1
@@ -906,6 +907,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   outerGlow: {fileID: 5525447097517141449}
+  animated: 1
   outglowDuration: 0.2
   outglowOnNormal: 0
   outglowOnHovered: 1
@@ -1273,6 +1275,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   outerGlow: {fileID: 9186416981932010695}
+  animated: 1
   outglowDuration: 0.2
   outglowOnNormal: 0
   outglowOnHovered: 1

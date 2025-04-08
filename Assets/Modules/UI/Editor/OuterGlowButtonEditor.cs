@@ -13,6 +13,7 @@ public class OuterGlowButtonEditor : ButtonEditor
         
         EditorGUILayout.LabelField("Glow", EditorStyles.boldLabel);
 
+        targetMenuButton.animated = EditorGUILayout.Toggle("Animated", targetMenuButton.animated);
         targetMenuButton.outglowDuration = EditorGUILayout.FloatField("Glow duration", targetMenuButton.outglowDuration);
         targetMenuButton.outglowOnNormal = EditorGUILayout.Toggle("Glow on normal", targetMenuButton.outglowOnNormal);
         targetMenuButton.outglowOnHovered = EditorGUILayout.Toggle("Glow on hovered", targetMenuButton.outglowOnHovered);
