@@ -149,8 +149,7 @@ MonoBehaviour:
   snapMode: 1
   cell: {fileID: 663767444937052668}
   selectFirstCellOnEnable: 0
-  selectFirstCellOnReload: 1
-  keepSelectionOnReload: 1
+  keepSelection: 1
   snapToCellWhenSelected: 1
   ring: {fileID: 3606815820171249036}
 --- !u!225 &6521703121215702397

@@ -194,9 +194,9 @@ namespace USEN.Games.Roulette
             
             // Show bottom buttons
             bottomPanel.confirmButton.gameObject.SetActive(true);
-            bottomPanel.yellowButton.gameObject.SetActive(true);
             bottomPanel.blueButton.gameObject.SetActive(true);
 #if USEN_ROULETTE
+            bottomPanel.yellowButton.gameObject.SetActive(true);
             bottomPanel.redButton.gameObject.SetActive(true);      
 #endif
             
