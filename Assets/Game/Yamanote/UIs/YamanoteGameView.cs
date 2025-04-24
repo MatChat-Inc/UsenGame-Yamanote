@@ -208,6 +208,7 @@ namespace USEN.Games.Yamanote
             BgmManager.Pause();
             await Navigator.Push<CommendView>();
             BgmManager.Resume();
+            _startTime = Time.time;
         }
         
         public async void StartGame()
