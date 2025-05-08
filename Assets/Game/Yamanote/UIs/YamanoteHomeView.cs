@@ -84,6 +84,13 @@ namespace USEN.Games.Yamanote
             if (Input.GetKeyDown(KeyCode.Escape) ||
                 Input.GetButtonDown("Cancel")) 
                 OnExitButtonClicked();
+
+#if DEBUG
+            if (Input.GetKeyDown(KeyCode.F1))
+            {
+                
+            }
+#endif
         }
 
         public void OnStartButtonClicked()

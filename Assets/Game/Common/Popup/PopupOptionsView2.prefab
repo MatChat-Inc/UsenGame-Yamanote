@@ -517,7 +517,7 @@ MonoBehaviour:
   offsetAngle: 90
   offsetDistance: 0
   offset: {x: 0, y: -0}
-  color: {r: 1, g: 1, b: 1, a: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
   inset: 0
   blendMode: 0
   useCasterAlpha: 1

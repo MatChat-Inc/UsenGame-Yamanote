@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Luna.UI;
 using Luna.UI.Navigation;
 using TMPro;
@@ -66,7 +67,8 @@ namespace USEN.Games.Yamanote
         {
             if (Input.GetKeyDown(KeyCode.Escape) ||
                 Input.GetButtonDown("Cancel")) {
-                Navigator.Pop((question: Question, shouldPlay: false));
+                inputField.DeactivateInputField();
+                PopupConfirmView();
             }
             
             // if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -121,6 +123,24 @@ namespace USEN.Games.Yamanote
                 bottomPanel.blueButton.gameObject.SetActive(true);
                 bottomPanel.redButton.gameObject.SetActive(true);
             }
+        }
+        
+        private void PopupConfirmView()
+        {
+            Navigator.ShowModal<AlertDialogue>((dialogue) => {
+                dialogue.Content = "編集中の内容を保存せずに終了しますか？";
+                dialogue.onConfirm = () =>
+                {
+                    Navigator.Pop();
+                    Navigator.Pop((question: Question, shouldPlay: false));
+                };
+                dialogue.onCancel = async () =>
+                {
+                    await UniTask.NextFrame();
+                    inputField.Select();
+                    inputField.ActivateInputField();
+                };
+            });
         }
     }
 }

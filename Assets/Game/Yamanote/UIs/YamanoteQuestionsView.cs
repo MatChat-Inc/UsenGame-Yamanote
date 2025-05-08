@@ -103,11 +103,11 @@ namespace USEN.Games.Yamanote
             }
         }
         
+        // Delete question
         private void OnYellowButtonClicked()
         {
-            var selectedQuestion = listView.SelectedData;
-            listView.RemoveSelected();
-            YamanoteDAO.Instance.DeleteQuestion(selectedQuestion);
+            if (listView.SelectedData == null) return;
+            PopupDeleteConfirmView();
         }
         
         public void PlaySequentially()
@@ -141,6 +141,27 @@ namespace USEN.Games.Yamanote
                 questions.Insert(0, question);
                 
                 view.Questions = questions;
+            });
+        }
+
+        private void DeleteSelectedQuestion()
+        {
+            var selectedQuestion = listView.SelectedData;
+            listView.RemoveSelected();
+            YamanoteDAO.Instance.DeleteQuestion(selectedQuestion);
+        }
+        
+        private void PopupDeleteConfirmView()
+        {
+            Navigator.ShowModal<AlertDialogue>((dialogue) =>
+            {
+                dialogue.Title = "削除しますか？";
+                dialogue.Content = "※一度削除した問題は復元できません。";
+                dialogue.onConfirm = () =>
+                {
+                    Navigator.Pop();
+                    DeleteSelectedQuestion();
+                };
             });
         }
     }
