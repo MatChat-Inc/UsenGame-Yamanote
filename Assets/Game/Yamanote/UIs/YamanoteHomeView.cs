@@ -47,8 +47,8 @@ namespace USEN.Games.Yamanote
             _categories = _dao.GetCategories();
             
             // Audio volume
-            BgmManager.Volume = RoulettePreferences.BgmVolume;
-            SFXManager.Volume = RoulettePreferences.SfxVolume;
+            BgmManager.Volume = YamanotePreferences.BgmVolume;
+            SFXManager.Volume = YamanotePreferences.SfxVolume;
             
             // Show loading indicator before necessary assets are loaded
             await UniTask.Yield(PlayerLoopTiming.PreLateUpdate);
