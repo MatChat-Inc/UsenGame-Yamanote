@@ -50,6 +50,7 @@ namespace USEN.Games.Yamanote
             bottomPanel.onRedButtonClicked += OnRedButtonClicked;
             bottomPanel.onBlueButtonClicked += OnBlueButtonClicked;
             bottomPanel.onGreenButtonClicked += OnGreenButtonClicked;
+            bottomPanel.onExitButtonClicked += OnExitButtonClicked;
             
             // Train tween animation
             trainImage.transform.DOLocalMoveX(-5000, 1.5f).SetEase(Ease.OutSine);
@@ -60,6 +61,7 @@ namespace USEN.Games.Yamanote
             bottomPanel.onRedButtonClicked -= OnRedButtonClicked;
             bottomPanel.onBlueButtonClicked -= OnBlueButtonClicked;
             bottomPanel.onGreenButtonClicked -= OnGreenButtonClicked;
+            bottomPanel.onExitButtonClicked -= OnExitButtonClicked;
         }
 
         private void OnDestroy()

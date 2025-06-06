@@ -285,7 +285,7 @@ namespace USEN.Games.Roulette
                     {
                         SFXManager.Stop();
                         Navigator.PopUntil<RouletteStartView, RouletteData>(RouletteData);
-                    }; 
+                    };
 #if UNITY_ANDROID
                     popup.onOption3 = () => Android.Back();
 #else

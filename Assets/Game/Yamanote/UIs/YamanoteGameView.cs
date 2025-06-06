@@ -153,8 +153,9 @@ namespace USEN.Games.Yamanote
             BgmManager.Play(R.Audios.BgmYamanote);
         }
 
-        public async void OnStartButtonClicked()
+        public void OnStartButtonClicked()
         {
+            Debug.Log("Start Yamanote Game");
             StartGame();
         } 
         
