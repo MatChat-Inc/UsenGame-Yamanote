@@ -109,11 +109,10 @@ namespace USEN.Games.Yamanote
         
         private void OnExitButtonClicked()
         {
-#if UNITY_ANDROID
-            Android.Back();
-#else
+// #if UNITY_ANDROID
+//             Android.Back();
+// #endif
             Application.Quit();
-#endif
         }
         
         public void PlayRandomGame()
