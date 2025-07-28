@@ -429,7 +429,8 @@ namespace USEN.Games.Yamanote
                     popup.onOption1 = () => Navigator.Pop();
                     popup.onOption2 = () => Navigator.PopToRoot();
 #if UNITY_ANDROID
-                    popup.onOption3 = () => Android.Back();
+                    // popup.onOption3 = () => Android.Back();
+                    popup.onOption3 = () => Application.Quit();
 #else
                     popup.onOption3 = () => Application.Quit();
 #endif

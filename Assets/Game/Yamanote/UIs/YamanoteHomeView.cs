@@ -1,5 +1,6 @@
 // Created by LunarEclipse on 2024-6-21 1:53.
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -41,6 +42,8 @@ namespace USEN.Games.Yamanote
 
         private async void Start()
         {
+            UsenEvents.OnRemoconHomeButtonClicked += OnHomeButtonClicked;
+            
             // Load data
             _dao = YamanoteDAO.Instance;
             _dao.UpdateTable(categoriesJson.text);
@@ -112,6 +115,11 @@ namespace USEN.Games.Yamanote
 // #if UNITY_ANDROID
 //             Android.Back();
 // #endif
+            Application.Quit();
+        }
+        
+        private void OnHomeButtonClicked(object sender, EventArgs e)
+        {
             Application.Quit();
         }
         
