@@ -16,7 +16,7 @@ namespace USEN
 
         static Request()
         {
-#if !DEBUG && UNITY_ANDROID
+#if !UNITY_EDITOR && UNITY_ANDROID
             var ssid = USEN.AndroidPreferences.Ssid ?? "01HA1S5FCXKDB78KGBZ0QP3HYQ";
             var tvIdentifier = USEN.AndroidPreferences.TVIdentifier ?? "N00000000000000065760";
 #else
